@@ -1,0 +1,171 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+@font-face { 
+    font-family: 'neo-regular';
+    font-style: normal;
+  
+    src: local("neo-regular"), url('../assets/fonts/NeoSansArabicRegular.ttf') format('truetype');
+    /* IE9 Compat Modes */
+  }
+  @font-face { 
+    font-family: 'neo-bold';
+    font-style: bold;
+  
+    src: local("neo-bold"), url('../assets/fonts/NeoSansArabicBold.ttf') format('truetype');
+    /* IE9 Compat Modes */
+  }
+  html {
+    font-size: 10px;
+    @include respond(s){
+        font-size: 9px;
+    
+        }
+        @include respond(m){
+            font-size: 8px;
+        
+            }
+    @include respond(l){
+    font-size: 10px;
+
+    }
+   
+}
+body {
+    box-sizing: border-box;
+   font-family: "neo-regular" , Arial;
+   font-size: $default-font;
+   color: $color-typo-second;
+   direction: rtl;
+   overflow: hidden;
+}
+.hidden{
+    visibility: hidden;
+}
+span{
+    display: inline-block;
+}
+hr{
+   
+    margin-top:  1rem;
+
+}
+ol,
+ul {
+    list-style: none;
+   
+
+}
+
+
+li { 
+    display: list-item;
+    //margin-left: 30px
+
+}
+a {
+    text-decoration: none ;
+    color: inherit;
+  //  font-size: 1.4rem;
+    cursor: pointer;
+    
+    font-weight: 500;
+    // font-family: "Cairo", Helvetica Neue, Arial, Liberation Sans, FreeSans, sans-serif
+
+
+}
+h1,h2,h3,h4,h5,h6{
+    padding-bottom: 1.2rem;
+}
+img {
+    color: transparent;
+    font-size: 0;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic
+}
+
+p:not(.no-default) {
+    font-weight: 300;
+    color: $color-typo-second;
+
+    margin: 10px 0;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 25px;
+   margin: 0;
+}
+
+
+h2 {
+    font-size: 23px
+}
+
+
+
+h4 {
+    font-size: 19px
+}
+
+h5 {
+    font-size: 17px
+}
+
+h6 {
+    font-size: 15px
+}
+
+
+// .overlay{
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     left: 0;
+//     background-color: rgba($color: #000000, $alpha: .1);
+//     // @include respond(s){
+        
+//     // background-color: #ebebeb;
+
+//     // }
+//    // z-index: 5;
+// }
+
+
+section {
+    display: block
+}
+
+img {
+    color: transparent;
+    font-size: 0;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic
+}
+
+
+td,
+th { 
+    font-weight: 400;
+    vertical-align: top;
+    text-align: left
+}
+
+
+
+
+ 

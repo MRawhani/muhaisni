@@ -1,0 +1,44 @@
+$main: #343333;
+$second:#DDBE86;
+$third:#676767;
+$color-first: #343333;
+$color-second: #DDBE86;
+$color-third: #676767;
+$color-fourth: #cccccc;
+$color-error: #D43C4C;
+$color-typo-main: #212529;
+$color-typo-second: #777777;
+$color-typo-third: #979797;
+$color-icons: #AFAFAF;
+$color-disabled: #f1f1f1;
+$color-input: #F0F0F1;
+$body-bg:#f7f7f7;
+$section-bg:#f4f4f5;
+$white-color:#fff;
+//font 
+$default-font: 1.6rem;
+//grid
+$grid-width: 114rem;
+$gutter-vertical: 1rem;
+$gutter-horizontal: 1rem;
+$margin-top: -10.9rem;
+$border-radius:12px;
+$border-radius-md:8px;
+$border-radius-sm:6px;
+
+$medium-sh: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$ring-ofset-shadow:0 0 transparent;
+
+$box-shadow: $ring-ofset-shadow ,
+0 0 transparent, $medium-sh;
+$box-shadow-md: $ring-ofset-shadow ,
+0 0 transparent, 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+$box-shadow-sm: $ring-ofset-shadow ,
+0 0 transparent, 0 1px 2px 0 rgba(0,0,0,0.05);
+
+$box-shadow-select-2: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+$shadow-value:0 4px 12px;
+$box-shadow-select: $shadow-value #c6c9ce29;
+$box-shadow-select-bg: $shadow-value #d3dae340;
+

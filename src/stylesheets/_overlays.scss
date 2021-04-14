@@ -1,0 +1,28 @@
+.loading{
+    height: 100vh;
+    position: absolute;
+    background:$color-first;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 100%;
+    transform: scale(1);
+    z-index: 10000;
+    transform-origin: 100% 100%;
+
+
+    ////
+    .logo-loading
+{
+        width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        opacity: 1;
+    }
+    }
+}
