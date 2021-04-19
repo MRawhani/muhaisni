@@ -3,7 +3,7 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 
@@ -15,8 +15,13 @@
     /* IE9 Compat Modes */
   }
   @font-face { 
+    font-family: 'neo-medium';
+    font-weight: 500;
+    src: local("neo-medium"), url('../assets/fonts/NeoSansArabicMedium.ttf') format('truetype');
+    /* IE9 Compat Modes */
+  }
+  @font-face { 
     font-family: 'neo-bold';
-    font-style: bold;
   
     src: local("neo-bold"), url('../assets/fonts/NeoSansArabicBold.ttf') format('truetype');
     /* IE9 Compat Modes */
@@ -29,12 +34,28 @@
         }
         @include respond(m){
             font-size: 8px;
-        
+            @include respond(to-h){
+                font-size: 7px;
+            
+                }
             }
-    @include respond(l){
-    font-size: 10px;
-
-    }
+           
+            @include respond(l){
+                font-size: 9px;
+                @include respond(to-h){
+                    font-size: 8px;
+                
+                    }
+                }
+                @include respond(xl){
+                    font-size: 1
+                    0px;
+                    @include respond(to-h){
+                        font-size: 8px;
+                    
+                        }
+                    }
+  
    
 }
 body {
@@ -44,6 +65,7 @@ body {
    color: $color-typo-second;
    direction: rtl;
    overflow: hidden;
+   font-weight: 100;
 }
 .hidden{
     visibility: hidden;
@@ -81,7 +103,8 @@ a {
 
 }
 h1,h2,h3,h4,h5,h6{
-    padding-bottom: 1.2rem;
+    // padding-bottom: 5px;
+    font-weight: 100;
 }
 img {
     color: transparent;
@@ -90,11 +113,10 @@ img {
     -ms-interpolation-mode: bicubic
 }
 
-p:not(.no-default) {
+p {
     font-weight: 300;
     color: $color-typo-second;
 
-    margin: 10px 0;
     font-size: 1.8rem;
     line-height: 1;
 }
@@ -130,21 +152,6 @@ h6 {
 }
 
 
-// .overlay{
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 0;
-//     left: 0;
-//     background-color: rgba($color: #000000, $alpha: .1);
-//     // @include respond(s){
-        
-//     // background-color: #ebebeb;
-
-//     // }
-//    // z-index: 5;
-// }
-
 
 section {
     display: block
@@ -165,7 +172,18 @@ th {
     text-align: left
 }
 
-
-
-
- 
+.f-bold{
+    font-family: 'neo-bold';
+}
+.f-medium{
+    font-family: 'neo-medium';
+}
+.f-regular {
+    font-family: 'neo-regular';
+}
+textarea {
+    resize: none;
+  }
+*  {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }

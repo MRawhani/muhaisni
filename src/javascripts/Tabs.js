@@ -1,7 +1,7 @@
 
 export const   tabFunctions = (active) => {
   var activeItemIndex = active >=0 ?active : findActiveItem(); //find active nav item params
-  debugger
+  
   setActiveItem(DOM.tabsNavItems[activeItemIndex])
 
   var _findActiveItemParams = findActiveItemParams(activeItemIndex),
@@ -132,8 +132,9 @@ export const   tabFunctions = (active) => {
     // parseInt(pad.substr(0, 2)) ;
 
     //  var activeItemOffset_left = activeTab.offsetLeft;
+    
     var activeItemOffset_left =
-      false ? left : right; //17 for scrollbar
+      false ? activeTab.offsetLeft : right; //17 for scrollbar
     //   var activeItemOffset_left = activeTab.offsetParent-activeTab.offsetLeft+activeTab.offsetWidth;
 
     return [activeItemWidth, activeItemOffset_left];

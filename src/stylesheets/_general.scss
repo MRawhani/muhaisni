@@ -1,7 +1,7 @@
 .general-content {
-  height: 100vh;
-  /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  // /* Fallback for browsers that do not support Custom Properties */
+  min-height: calc(var(--vh, 1vh) * 100);
   position: relative;
 
   .title {
@@ -11,50 +11,88 @@
   }
 }
 
+.page-spacing {
+  padding-right: 0;
+  margin-top: 6rem;
+
+  @include respond(m) {
+    padding-right: 8.5rem;
+    margin-top: 0;
+
+  }
+
+  &.home {
+    margin: 0;
+    padding: 10.6rem 0;
+
+    @include respond(m) {
+      padding: 0 8.5rem 0 0;
+
+    }
+  }
+}
+
 .home {
   position: relative;
   //  height: 85vh; //temp
-  padding-right: 4.5rem;
+  position: relative;
+
 
   &__content {
 
     h1 {
-      font-size: 4rem;
-      line-height: 4.8rem;
+      font-size: 2.4rem;
+      line-height: 3.9rem;
+
       ///color: $color-typo-main;
+      @include respond(s) {
+        font-size: 4rem;
+        line-height: 4.8rem;
+      }
+
       margin: 0;
     }
 
     .hero {
       text-align: left;
-      margin-top: 2.5rem;
+      margin-top: 4.5rem;
+      margin-bottom: 3.8rem;
 
-      @include respond(h) {
-        margin-top: 5rem;
+      @include respond(m) {
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
 
+        @include respond(xh) {
+          margin-top: 5.9rem;
+
+        }
       }
 
       .img {
-        background: url('../images/hero-mobile.jpg') no-repeat center center /contain;
-        background-position-x: 11%;
-        height: 70vh;
+        background: url('../images/hero-mobile.png') no-repeat center top /contain;
+
+        height: 61.8rem;
+
+        @include respond(xs) {
+          background: url('../images/hero.png') no-repeat center center /contain;
+          height: 58vh;
+          background-position: 0 0;
+
+
+        }
 
         @include respond(m) {
-          background: url('../images/hero.jpg') no-repeat center center /contain;
-          height: 50vh;
+
           background-position-x: 11%;
+          background-position-y: center;
 
-          @include respond(h) {
-            height: 62vh;
-            background-position-x: 14%;
 
-          }
         }
 
         @include respond(l) {
           @include respond(h) {
-            height: 62vh;
-            background-position-x: 14%;
+            height: 60vh;
+            background-position-x: 15%;
 
           }
         }
@@ -62,11 +100,31 @@
     }
 
     .title {
-    //  opacity: 0;
+      //  opacity: 0;
     }
 
     .content {
-      opacity: 0;
+      opacity: 1;
+    }
+  }
+
+  &__footer {
+    background: $color-typo-main;
+    height: 18.1rem;
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+
+    z-index: -1;
+    transition: all .3s;
+
+    .page-lines.bottom {
+      height: 80%;
+      transition: all .3s;
+    }
+
+    @include respond(m) {
+      display: none;
     }
   }
 }
@@ -74,13 +132,11 @@
 .about {
   position: relative;
   //  height: 85vh; //temp
-  padding-right: 4.5rem;
 
   &__content {
 
     h1 {
-      font-size: 4rem;
-      line-height: 4.8rem;
+
       margin: 0;
       //   margin: 0 0 2rem 0;
       //   @include respond(h){
@@ -90,26 +146,603 @@
     }
 
     .content {
-      margin-top: 2.5rem;
+      margin-top: 2.6rem;
+      margin-bottom: 3rem;
 
-      @include respond(h) {
-        margin-top: 5rem;
+      @include respond(m) {
+        margin-top: 3rem;
 
+        @include respond(xh) {
+          margin-top: 3.8rem;
+
+          margin-bottom: 6rem;
+
+        }
       }
     }
 
     p {
-      font-size: 3rem;
-      line-height: 5rem;
+      font-size: 2rem;
+      line-height: 4.5rem;
+      color: $color-typo-second;
+
+      @include respond(m) {
+        margin-top: 1rem;
+
+        font-size: 3rem;
+        line-height: 5rem;
+
+        @include respond(xh) {
+          margin-top: 2.8rem;
+
+        }
+      }
+    }
+
+    h3 {}
+
+    &--box {
+      background: $white-color;
+      border: 1px solid $color-typo-main;
+      padding: 2rem;
+
+      @include respond(m) {
+        padding: 2rem 2.6rem;
+
+      }
+
+      // max-width: 44.4rem;
+      // max-height: 28rem;
+      height:100%;
+      text-align: center;
+
+      @include respond(xh) {
+        padding: 3rem 2.6rem;
+
+      }
+
+      img {
+        width: 6.112rem;
+        // height: 4.922rem;
+
+        @include respond(m) {
+          width: 7.7rem;
+          // height: 6.23rem;
+        }
+      }
+
+      h2 {
+        font-size: 2.4rem;
+        line-height: 2.3rem;
+        color: $color-typo-main;
+        margin: 1.7rem 0;
+
+        @include respond(m) {
+          margin: 2rem 0 1.4rem;
+          font-size: 3rem;
+          line-height: 3rem;
+
+          @include respond(xh) {
+            margin: 2.3rem 0 2rem;
+
+          }
+        }
+      }
+
+      p {
+        color: $color-typo-second;
+        font-size: 2rem;
+        line-height: 3.4rem;
+
+        @include respond(m) {
+          font-size: 2.4rem;
+          line-height: 4rem;
+        }
+      }
+    }
+  }
+
+}
+
+.clients {
+  position: relative;
+  //  height: 85vh; //temp
+
+  &__content {
+
+    h1 {
+
+      margin: 0;
+
+    }
+
+    .content {
+      margin-top: 2.6rem;
+      margin-bottom: 4.5rem;
+
+      @include respond(m) {
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+
+        @include respond(xh) {
+          margin-top: 4rem;
+
+          margin-bottom: 4rem;
+
+        }
+      }
+
+
+    }
+
+    h3 {}
+
+
+  }
+
+  &__logo {
+    padding: 2.1rem 1rem;
+    // min-width: 9rem;
+    // min-height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(m) {
+      @include respond(xh) {
+        padding: 1.4rem 1rem;
+
+        // min-width: 7.3rem;
+        // min-height: 7.5rem;
+      }
+
+      @include respond(h2) {
+        padding: 2rem 1rem;
+
+        // min-width: 7.6rem;
+        // min-height: 7.9rem;
+      }
+    }
+  }
+
+}
+
+.companies {
+  position: relative;
+
+  &__content {
+
+    h1 {
+
+      margin: 0;
+
+    }
+
+    .content {
+      margin-top: 2.6rem;
+
+      margin-bottom: 4rem;
+
+      @include respond(m) {
+
+        @include respond(xh) {
+          margin-bottom: 4.5rem;
+
+        }
+
+        @include respond(h) {
+          margin-bottom: 6rem;
+
+        }
+      }
+    }
+
+    h3 {}
+
+
+  }
+
+  &__box {
+    background: $white-color;
+    border: 8px solid $color-first;
+
+    @include respond(m) {
+      border: 8px solid $color-input;
+
+    }
+
+    padding: 2rem 2.6rem;
+    // max-width: 40.8rem;
+    max-height:55rem;
+    text-align: center;
+    height: 100%;
+
+    @include respond(xh) {
+      padding: 3rem 3rem;
+
+    }
+
+    img {
+      width: auto;
+      height: 11.7rem;
+
+      @include respond(m) {
+
+        height: 12.2rem;
+      }
+    }
+
+    h2 {
+      font-size: 2.9rem;
+      line-height: 3.5rem;
+      color: $color-typo-main;
+      margin: 4rem 0 2.8rem;
+
+      // @include respond(xh) {
+      //   margin: 2.3rem 0 2rem;
+
+      // }
+    }
+
+    p {
+      color: $color-typo-second;
+      font-size: 2rem;
+      line-height: 3.4rem;
+
+      @include respond(m) {
+        font-size: 2.4rem;
+        line-height: 4rem;
+      }
+
+    }
+
+    a {
+      margin-top: 4rem;
+      font-size: 2.2rem;
+      line-height: 3.7rem;
+      display: inline-block;
+
+      @include respond(m) {
+        font-size: 2.4rem;
+        line-height: 4rem;
+      }
+    }
+  }
+
+}
+
+.blogs {
+  position: relative;
+
+  &__content {
+
+    h1 {
+
+      margin: 0;
+
+    }
+
+    .content {
+      margin-top: 2.4rem;
+
+      margin-bottom: 2.6rem;
+
+      @include respond(m) {
+        margin-top: 3.6rem;
+
+        margin-bottom: 3rem;
+
+        @include respond(xh) {
+         
+          margin-bottom: 4rem;
+
+        }
+
+       
+
+      }
+
+    }
+
+    h3 {}
+
+
+  }
+
+  &__box {
+    background: $white-color;
+    border: 1px solid $color-typo-main;
+
+    // max-width: 58.1rem;
+    // max-height:57rem;
+    text-align: right;
+    border-radius: 4px;
+    height: 100%;
+
+
+    &--img {
+      width: 100%;
+      height: 27rem;
+
+      @include respond(m) {
+        height: 22rem;
+
+        @include respond(xh) {
+          height: 24.1rem;
+
+        }
+
+        @include respond(h) {
+          height: 27.1rem;
+
+        }
+      }
+
+      position: relative;
+
+      @supports (object-fit: cover) {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+        }
+      }
+
+      @supports not (object-fit: cover) {
+        img {
+          position: absolute;
+          left: -10000%;
+          right: -10000%;
+          top: -10000%;
+          bottom: -10000%;
+          margin: auto auto;
+          min-width: 1000%;
+          min-height: 1000%;
+          -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+
+        }
+      }
+
+    }
+
+    &--content {
+
+      padding: 2rem 1.8rem 2.4rem;
+
+      h1 {
+        font-size: 1.9rem;
+        line-height: 2.3rem;
+        padding: 0;
+        color: $color-typo-main;
+        cursor: pointer;
+
+        &:hover{
+        text-decoration: underline;
+
+        }
+        @include respond(m) {
+          font-size: 2.4rem;
+          line-height: 3rem;
+
+        }
+      }
+
+      p {
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+        margin: 1.7rem 0 2rem;
+
+        @include respond(m) {
+          font-size: 2rem;
+          line-height: 3.4rem;
+          margin: 1.6rem 0 2.8rem;
+
+        }
+
+        color: $color-typo-second;
+      }
+    }
+
+    &--btns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        font-size: 2rem;
+        line-height: 3rem;
+
+        @include respond(m) {
+          font-family: 'neo-medium';
+        }
+      }
+    }
+
+  }
+
+}
+
+.contact {
+  position: relative;
+
+  &__content {
+
+    h1 {
+
+      margin: 0;
+
+    }
+
+    .content {
+
+      margin: 2.6rem 0;
+
+      @include respond(m) {
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+
+        @include respond(xh) {
+        margin-top: 3.8rem;
+
+          margin-bottom: 3.8rem;
+
+        }
+
+      }
+
+    }
+
+    h3 {}
+
+
+  }
+
+  &__info {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__form {
+
+
+    background: $color-input;
+    padding: 2rem 2.4rem 1.6rem;
+    flex: 1;
+
+    .btn {
+      width: 100%;
+      text-decoration: none;
+      padding: 1.7rem;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      color: $white-color;
+      display: inline-block;
+      background: $color-typo-main;
+      transition: all .2s ease-in-out;
+      position: relative;
+      border: none;
+      text-align: center;
+
+      cursor: pointer;
+
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 2.4rem;
+      margin-bottom: 1.8rem;
       color: $color-typo-second;
     }
 
-    h3 {
-      color: $color-typo-main;
-      font-size: 3rem;
-      line-height: 3.6rem;
+    @include respond(m) {
+      margin-left: 3.4rem;
+
     }
   }
+
+  &__detail {
+    width: 100%;
+    background: transparent;
+
+    padding: 2.6rem 0;
+
+    @include respond(m) {
+      padding: 1.6rem;
+
+      width: 45%;
+
+      @include respond(h2) {
+        width: 48%;
+
+      }
+
+    }
+
+
+    &--box {
+      display: flex;
+      margin-bottom: 4.6rem;
+
+      @include respond(m) {
+        margin-bottom: 3rem;
+
+        @include respond(xh) {
+          margin-bottom: 4rem;
+
+        }
+      }
+
+
+      .icon {
+        background: $color-second;
+        margin-left: 12px;
+
+        @include respond(m) {
+          margin-left: 10px;
+
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 3.9rem;
+        height: 3.9rem;
+        // padding: 8px;
+
+        img {
+          width: 1.8rem;
+          //
+        }
+      }
+
+      .content {
+        margin: 0;
+
+        h1 {
+          font-family: "neo-medium";
+          padding: 0;
+          line-height: 3rem;
+          font-size: 2.2rem;
+          margin-bottom: .8rem;
+          color: $color-typo-second;
+
+          @include respond(m) {
+            line-height: 4rem;
+            font-size: 2.4rem;
+          }
+        }
+
+        a {
+          font-size: 2rem;
+
+          line-height: 2.4rem;
+
+          @include respond(m) {
+            font-size: 2.2rem;
+          }
+        }
+
+        p {
+          font-size: 2rem;
+
+          line-height: 2.4rem;
+
+          @include respond(m) {
+            font-size: 2.2rem;
+          }
+
+          color:$color-typo-main;
+
+        }
+      }
+    }
+  }
+
 }
 
 .content-mask {
@@ -134,9 +767,100 @@
 
 footer {
   background: $color-typo-main;
-  height: 35%;
+  height: 32vh;
   position: absolute;
   bottom: 0;
   width: 100%;
+
   z-index: -1;
+  transition: all .3s;
+
+  .page-lines.bottom {
+    height: 80%;
+    transition: all .3s;
+  }
+
+  &.small {
+    height: 15vh;
+
+    .page-lines.bottom {
+      height: 100%;
+
+    }
+
+    @include respond(h2) {
+      height: 22%;
+
+    }
+  }
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  p {
+    display: none;
+    width: 80%;
+    @include respond(xs){
+    width: 50%;
+
+    }
+    text-align: center;
+    color: $white-color;
+    line-height: 2.4rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+  padding: 1.8rem 0;
+
+
+  }
+  &.with-padding {
+    height: 22vh;
+
+    .page-lines.bottom {
+      height: 80%;
+
+    }
+    p {
+     
+
+      @include respond(m) {
+        display: block !important;
+      }
+    }
+    @include respond(h2) {
+      height: 31vh;
+
+    }
+  }
+
+ 
+
+  &.putDown {
+    position: relative;
+    top: 100%;
+    margin-top: 2rem;
+    height: 8.6rem !important;
+
+    p {
+      display: block;
+
+      @include respond(m) {
+        display: none;
+
+      }
+    }
+
+    @include respond(m) {
+      height: 35vh !important;
+
+    }
+
+    .page-lines.bottom {
+      display: none;
+
+      @include respond(m) {
+        display: unset;
+      }
+    }
+
+  }
 }

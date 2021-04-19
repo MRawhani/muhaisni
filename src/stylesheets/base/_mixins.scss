@@ -49,12 +49,12 @@
         };
     }
     @if $breakpoint == xs{
-        @media (min-width: 25em) { //400
+        @media (min-width: 550px) { //400
             @content
         };
     }
     @if $breakpoint == s{
-        @media (min-width: 786px) { //569
+        @media (min-width: 768px) { //569
             @content
         };
     }
@@ -86,6 +86,16 @@
     }
     @if $breakpoint == xxxl{ 
         @media (min-width: 3000px) { //2500
+            @content
+        };
+    }
+    @if $breakpoint == to-h{
+        @media (max-height: 800px) { //400
+            @content
+        };
+    }
+    @if $breakpoint == xh{
+        @media (min-height: 700px) { //400
             @content
         };
     }
