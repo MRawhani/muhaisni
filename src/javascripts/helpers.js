@@ -75,9 +75,9 @@ export const insertBlogs = function () {
   export const changeFooterPos = (dimentions) => {
     if(dimentions.width > 900){
       if((dimentions.height * 2 +150 < dimentions.width)||dimentions.height<600 || (dimentions.width>1900 && dimentions.height <950)){
-        document.getElementById('footer').classList.add('putDown')
-        document.getElementById('arrows-wrapper').classList.add('custom-position')
-        document.body.style.overflow = 'auto'
+        // document.getElementById('footer').classList.add('putDown')
+        // document.getElementById('arrows-wrapper').classList.add('custom-position')
+        // document.body.style.overflow = 'auto'
       } else{
         document.getElementById('footer').classList.remove('putDown')
         document.getElementById('arrows-wrapper').classList.remove('custom-position')

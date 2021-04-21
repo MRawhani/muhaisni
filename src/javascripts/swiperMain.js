@@ -40,7 +40,7 @@ const enableSwiper = function() {
     autoHeight: true,
     
     loop: false,
-    allowTouchMove: true,
+    allowTouchMove: false,
     mousewheel: {
       invert: true,
     },
@@ -373,12 +373,12 @@ preventClicksPropagation: false,
 
         },
         1600: {
-          slidesPerView: dimentions.height<900&& dimentions.height>800 ? 2.4:3.2,
+          slidesPerView: dimentions.height<900&& dimentions.height>800 ? 2.7:3.2,
 
         },
         1900: {
           spaceBetween:40,
-          slidesPerView:  dimentions.height<1020 ? 3.1:4.1,
+          slidesPerView:  dimentions.height<1020 ? 4.1:4.1,
         },
       },
     }
