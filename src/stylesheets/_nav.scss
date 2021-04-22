@@ -10,7 +10,7 @@
 
   min-width: 100%;
  
-  z-index: 5;
+  z-index: 9;
   transition: all .3s;
 
   a {
@@ -60,6 +60,12 @@
 
         }
 
+      }
+      .white-logo{
+        display: none;
+      }
+      .main-logo{
+        display: block;
       }
     }
 
@@ -177,9 +183,11 @@
 
 
       & ul {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-60px);
+        // opacity: 0;
+        // visibility: hidden;
+        opacity: 1;
+        visibility: visible;
+        // transform: translateX(-60px);
         transition: all .3s;
         flex-direction: column;
         flex: 100%;
@@ -284,20 +292,31 @@
   }
 
   &.mobile {
-
+    height: 100vh;
+    // /* Fallback for browsers that do not support Custom Properties */
+   height: calc(var(--vh, 1vh) * 100);
     background: $color-first;
-    z-index: 555;
-    transform: translateX(-500px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all .5s;
-   
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    min-width: 0;
+    z-index: 6;
+    transform: scaleX(0);
+    transition:none;
+    // opacity: 0;
+    // visibility: hidden;
+    // opacity: 1;
+    // visibility: visible;
+    // transition: all .5s;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: center;
+    padding-top: 8rem;
+    // top: 0%;
+    // bottom: 0%;
+    // right: 0%;
+    // left: 0;
+    min-width: 100%;
     overflow: auto;
-    width: 100%;
+    // width: 100%;
+    transform-origin: 100% 100%;
    @include respond(xs) {
         width: 70%;
       }
@@ -321,6 +340,9 @@
             transform: none;
           }
         }
+        a{
+          transition:none;
+        }
       }
   
       .overlay {
@@ -334,7 +356,18 @@
     }
   
 }
+&.nav-open{
+  z-index: 7;
 
+  .logo{
+    .white-logo{
+      display: inline-block;
+    }
+    .main-logo{
+      display: none;
+    }
+  }
+}
   &.scrolled{
   height: auto;
 
@@ -342,6 +375,11 @@
       background: linear-gradient(180deg, rgba($white-color,1) 0%, rgba($white-color,.9) 30%,rgba($white-color,.8) 50%,rgba($white-color,.5) 70%,rgba($white-color,.2) 85%,rgba($white-color,0) 100%);
       @include respond(m) {
       background: transparent;
+      }
+      transition: background .3s;
+      &.remove-scrolled-styles{
+      background: transparent;
+
       }
       .header{
         padding: 1rem 0 1.4rem 0;

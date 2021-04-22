@@ -14,8 +14,60 @@ export const setUpmobileHeight = function () {
 };
 
 export const insertLogosToClientsPage = function () {
-    for (let index = 1; index <= 90; index++) {
-      document.getElementById("clients-logos").insertAdjacentHTML(
+    // for (let index = 1; index <= 90; index++) {
+    //   document.getElementById("clients-logos").insertAdjacentHTML(
+    //     "beforeend",
+    //     `
+    // <div class="swiper-slide">
+    // <div class="clients__logo">
+    //   <img src="images/clients/Client_${index}.svg" alt="client logo" />
+     
+    // </div>
+    // </div>
+    // `
+    //   );
+    // }
+    for (let index = 1; index <= 25; index++) {
+      document.getElementById("clients-logos1").insertAdjacentHTML(
+        "beforeend",
+        `
+    <div class="swiper-slide">
+    <div class="clients__logo">
+      <img src="images/clients/Client_${index}.svg" alt="client logo" />
+     
+    </div>
+    </div>
+    `
+      );
+    }
+    for (let index = 26; index <= 50; index++) {
+      document.getElementById("clients-logos2").insertAdjacentHTML(
+        "beforeend",
+        `
+    <div class="swiper-slide">
+    <div class="clients__logo">
+      <img src="images/clients/Client_${index}.svg" alt="client logo" />
+     
+    </div>
+    </div>
+    `
+      );
+    }
+    for (let index = 51; index <= 75; index++) {
+      document.getElementById("clients-logos3").insertAdjacentHTML(
+        "beforeend",
+        `
+    <div class="swiper-slide">
+    <div class="clients__logo">
+      <img src="images/clients/Client_${index}.svg" alt="client logo" />
+     
+    </div>
+    </div>
+    `
+      );
+    }
+    for (let index = 76; index <= 90; index++) {
+      document.getElementById("clients-logos4").insertAdjacentHTML(
         "beforeend",
         `
     <div class="swiper-slide">

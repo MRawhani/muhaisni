@@ -1,9 +1,9 @@
-import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper/core";
+import SwiperCore, { Navigation, Pagination, EffectFade,Autoplay,Mousewheel } from "swiper/core";
 import { tabFunctions } from "./Tabs";
 import { gsap } from "gsap";
 
 // configure Swiper to use modules
-SwiperCore.use([Navigation, Pagination, EffectFade]);
+SwiperCore.use([Navigation, Pagination, EffectFade,Autoplay,Mousewheel]);
 let swiper;
 function initSwiper() {
   
@@ -37,13 +37,11 @@ const enableSwiper = function() {
   
   swiper = new SwiperCore(".main-swiper", {
     effect: "fade",
-    autoHeight: true,
-    
+    autoHeight: false,
+    // direction:'vertical',
     loop: false,
     allowTouchMove: false,
-    mousewheel: {
-      invert: true,
-    },
+    mousewheel: true,
     // If we need pagination
     pagination: {
       el: ".swiper-pagination",
@@ -294,7 +292,98 @@ function initNestedSliders() {
     },
    
   });
- 
+  const clientesSettings = {
+    slidesPerView:  10,
+    loop: true,
+  
+    grabCursor: true,
+    
+    freeMode:true,
+    // autoplay: {
+    //   delay: 0,
+    //   disableOnInteraction: false
+    // },
+    allowTouchMove:false,
+    speed: 40000,
+    freeModeMomentum:false,
+    breakpoints: {
+      1900: {
+        slidesPerView: 14,
+           
+          },
+      1600: {
+        slidesPerView:  12,
+           
+          },
+          1200: {
+            slidesPerView:  10,
+               
+              },
+      900: {
+        slidesPerView: 8,
+      
+      },
+      550: {
+        slidesPerView: 6,
+     
+      },
+      400: {
+        slidesPerView: 5,
+        
+      },
+      320: {
+        slidesPerView: 3,
+       
+      },
+    
+    
+    },
+  }
+  var swiperNestedClients1 = new SwiperCore(".swiper-container-clients-nested1", clientesSettings);
+  var swiperNestedClients2 = new SwiperCore(".swiper-container-clients-nested2", clientesSettings);
+  var swiperNestedClients3 = new SwiperCore(".swiper-container-clients-nested3", {...clientesSettings, speed:38000,});
+  var swiperNestedClients4 = new SwiperCore(".swiper-container-clients-nested4", {...clientesSettings,speed:25000});
+  function infinite1() {
+    swiperNestedClients1.slideTo(swiperNestedClients1.slides.length);
+    swiperNestedClients1.once('transitionEnd', function(){
+        swiperNestedClients1.slideTo(swiperNestedClients1.params.slidesPerView, 0, false);
+        setTimeout(function () {
+            infinite1();    
+        }, 0);
+    });
+}
+function infinite2() {
+  swiperNestedClients2.slideTo(swiperNestedClients2.slides.length);
+  swiperNestedClients2.once('transitionEnd', function(){
+      swiperNestedClients2.slideTo(swiperNestedClients2.params.slidesPerView, 0, false);
+      setTimeout(function () {
+          infinite2();    
+      }, 0);
+  });
+}
+function infinite3() {
+  swiperNestedClients3.slideTo(swiperNestedClients3.slides.length);
+  swiperNestedClients3.once('transitionEnd', function(){
+      swiperNestedClients3.slideTo(swiperNestedClients3.params.slidesPerView, 0, false);
+      setTimeout(function () {
+          infinite3();    
+      }, 0);
+  });
+}
+function infinite4() {
+  swiperNestedClients4.slideTo(swiperNestedClients4.slides.length);
+  swiperNestedClients4.once('transitionEnd', function(){
+      swiperNestedClients4.slideTo(swiperNestedClients4.params.slidesPerView, 0, false);
+      setTimeout(function () {
+          infinite4();    
+      }, 0);
+  });
+}
+
+infinite1();
+infinite2();
+infinite3();
+infinite4();
   var swiperNestedBlogs = new SwiperCore(".swiper-container-blogs-nested", {
     slidesPerView: 2.8,
     grabCursor: true,
@@ -347,7 +436,7 @@ function initClientsNestedSlider(dimentions) {
       freeMode: true,
       spaceBetween: 20,
       nested: true,
-      slideToClickedSlide:true,
+      // slideToClickedSlide:true,
       preventClicks: false,
 preventClicksPropagation: false,
       breakpoints: {

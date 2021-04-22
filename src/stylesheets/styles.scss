@@ -16,4 +16,164 @@
 
 
 
+.btn-mm {
+  display: block;
+  z-index: 7;
+  position: relative;
+//   top: 6px;
+//   right: 1.5vw;
+  width: 43px;
+  height: 40px;
+  cursor: pointer;
+  //padding: 10px
+}
+
+.btn-mm>div {
+  display: block;
+  z-index: 1;
+  position: relative;
+  width: 23px;
+  height: 20px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0)
+}
+
+.btn-mm>div>div {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 23px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: $second
+}
+
+.btn-mm:active .mmbar,
+.btn-mm:focus .mmbar,
+.btn-mm:hover .mmbar {
+  background-color: #f3a83a
+}
+
+.mmbar {
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.84, .71, .18, 1.13), background-color .3s cubic-bezier(.84, .71, .18, 1.13);
+  -moz-transition: -moz-transform .3s cubic-bezier(.84, .71, .18, 1.13), background-color .3s cubic-bezier(.84, .71, .18, 1.13);
+  -o-transition: -o-transform .3s cubic-bezier(.84, .71, .18, 1.13), background-color .3s cubic-bezier(.84, .71, .18, 1.13);
+  transition: transform .3s cubic-bezier(.84, .71, .18, 1.13), background-color .3s cubic-bezier(.84, .71, .18, 1.13)
+}
+
+.mmbar-t {
+  top: 0
+}
+
+.btnmm__middle {
+  top: 8px;
+  background-color: transparent !important
+}
+
+.btnmm__middle>div {
+  float: left;
+  height: 3px;
+  margin-right: 2px;
+  border-radius: 10px;
+  background-color: $second
+}
+
+.btnmm__middle>div:last-child {
+  margin-right: 0
+}
+
+.btnmm__middle .mmbar-m {
+  width: 13px
+}
+
+.btnmm__middle .mmbar-dot {
+  width: 3px
+}
+
+.mmbar-dot {
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s
+}
+
+.mmbar-dot+.mmbar-dot {
+  -webkit-transition-delay: .1s 0s;
+  -moz-transition-delay: .1s 0s;
+  -o-transition-delay: .1s 0s;
+  transition-delay: .1s 0s
+}
+
+.mmbar-b {
+  -webkit-transform: translateY(16px);
+  -moz-transform: translateY(16px);
+  -ms-transform: translateY(16px);
+  -o-transform: translateY(16px);
+  transform: translateY(16px);
+  top: 0
+}
+
+@supports (mix-blend-mode:lighten) {
+  .section-intro-home .sectionbg__video .inner div:before {
+    background-color: #313131;
+    mix-blend-mode: lighten
+  }
+}
+
+@supports (mix-blend-mode:lighten) {
+
+  .service__img:before,
+  .service__video:before {
+    background-color: #212121;
+    mix-blend-mode: lighten
+  }
+}
+
+// @media (max-width:767px) {
+ 
+
+//   .btn-mm {
+//     top: 5px;
+//     right: 6px
+//   }
+// }
+.nav-open .btn-mm .mmbar-t {
+    -webkit-transform: translateY(8px) rotate(
+45deg
+);
+    -moz-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(
+45deg
+);
+}
+.nav-open .btn-mm .mmbar {
+    background-color: $second;
+}
+.nav-open .btn-mm .mmbar-dot, .nav-open .btn-mm .mmbar-m {
+    -webkit-transform: translateX(-23px);
+    -moz-transform: translateX(-23px);
+    -ms-transform: translateX(-23px);
+    -o-transform: translateX(-23px);
+    transform: translateX(-23px);
+}
+.nav-open .btn-mm .mmbar {
+    background-color: $second;
+}
+.nav-open .btn-mm .mmbar {
+    background-color: $second;
+}
+.nav-open .btn-mm .mmbar-b {
+    -webkit-transform: translateY(8px) rotate(
+-45deg
+);
+    -moz-transform: translateY(8px) rotate(-45deg);
+    -ms-transform: translateY(8px) rotate(-45deg);
+    -o-transform: translateY(8px) rotate(-45deg);
+    transform: translateY(8px) rotate(
+-45deg
+);
+}
 @import 'base/utils';

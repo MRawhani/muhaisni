@@ -185,6 +185,7 @@
       background: $white-color;
       border: 1px solid $color-typo-main;
       padding: 2rem;
+      border-radius: 4px;
 
       @include respond(m) {
         padding: 2rem 2.6rem;
@@ -309,7 +310,6 @@
 
 .companies {
   position: relative;
-
   &__content {
 
     h1 {
@@ -341,27 +341,57 @@
 
 
   }
+&__box-wrapper{
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  // border: 8px solid transparent;
+  padding: .8rem;
 
-  &__box {
-    background: $white-color;
+  &::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    // box-sizing: content-box;
     border: 8px solid $color-first;
-
+  
+    border-radius: 4px;
     @include respond(m) {
       border: 8px solid $color-input;
 
     }
+  }
+  @include respond(xh) {
+  
+
+  }
+
+}
+  &__box {
+    background: $white-color;
+    // border: 8px solid $color-first;
+     border-radius: 4px;
+    // @include respond(m) {
+    //   border: 8px solid $color-input;
+
+    // }
+    box-sizing: border-box;
+    border: 8px solid transparent;
 
     padding: 2rem 2.6rem;
     // max-width: 40.8rem;
     max-height:55rem;
     text-align: center;
     height: 100%;
-
-    @include respond(xh) {
-      padding: 3rem 3rem;
-
-    }
-
+    // position: relative;
+   
     img {
       width: auto;
       height: 11.7rem;
@@ -618,6 +648,7 @@
       width: 100%;
       text-decoration: none;
       padding: 1.7rem;
+      border-radius: 4px;
       font-size: 1.6rem;
       line-height: 1.9rem;
       color: $white-color;

@@ -255,6 +255,7 @@ position: absolute;
     width: 6.3rem;
     height: 6.3rem;
     background: $second;
+    // border-radius: 4px;
    
    
     &::after{
@@ -334,5 +335,22 @@ position: absolute;
   .swiper-wrapper{
     align-items: stretch;
     
+  }
+  .clients-wrapper{
+    -webkit-transition-timing-function: linear !important; 
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important; 
+    padding: .5rem 0;
+  }
+  .swiper-slide{
+    pointer-events: auto !important;
+  }   
+  .swiper-container-clients-nested4{
+    @include respond(m){
+      display: none;
+      @include respond(xh){
+        display: block;
+      }
+    }
   }
 }
