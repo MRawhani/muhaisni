@@ -125,16 +125,16 @@ export const   tabFunctions = (active) => {
      activeTab.getBoundingClientRect().right -
      (document.documentElement.clientWidth - parentPos.right) 
      const left =
-     document.documentElement.clientWidth -
-     activeTab.getBoundingClientRect().left -
-     (document.documentElement.clientWidth - parentPos.left) +40
+     (document.documentElement.clientWidth - parentPos.left)-  (document.documentElement.clientWidth -
+     activeTab.getBoundingClientRect().left )
+      
     // -
     // parseInt(pad.substr(0, 2)) ;
-
+const ss= activeTab.getBoundingClientRect().left 
     //  var activeItemOffset_left = activeTab.offsetLeft;
     
     var activeItemOffset_left =
-      false ? activeTab.offsetLeft : right; //17 for scrollbar
+    window.location.href.includes("index_en")    ? left  : right; //17 for scrollbar
     //   var activeItemOffset_left = activeTab.offsetParent-activeTab.offsetLeft+activeTab.offsetWidth;
 
     return [activeItemWidth, activeItemOffset_left];
@@ -163,7 +163,7 @@ export const   tabFunctions = (active) => {
     elem.style.width = "".concat(decorWidth-10).concat("px");
     //   elem.style.left = "-".concat(pad);
     elem.style.transform = `translateX(${
-      false ? "" : "-"
+      window.location.href.includes("index_en")  ? "" : "-"
     }`.concat(decorOffset, "px)");
   }; //find active panel
 

@@ -1,7 +1,5 @@
 import smoothScroll from "smooth-scroll";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+
 
 import { tabFunctions } from "./Tabs";
 import swipe from "./swiperMain";
@@ -14,6 +12,7 @@ import {
   changeFooterPos,
   scrollAction,
 } from "./helpers";
+
 
 let dimentions = getWindowDimensions();
 
@@ -28,12 +27,12 @@ document.addEventListener(
       });
       setUpmobileHeight();
 
-      //  WhenStartAnimation.initAnimation(dimentions)
+        WhenStartAnimation.initAnimation(dimentions)
       if (dimentions.width <= 900) {
         WhenStartAnimation.navBarAnimation();
         WhenStartAnimation.sectionsAnimation();
       }
-      changeFooterPos(dimentions);
+      // changeFooterPos(dimentions);
       swipe.initSwiper();
       tabFunctions();
 
@@ -41,6 +40,13 @@ document.addEventListener(
       swipe.initNestedSliders();
 
       //event lsiteners
+      document.getElementById("send-btn").addEventListener("click",()=>{
+        document.querySelector(".alert").classList.add("show")
+        setTimeout(() => {
+        document.querySelector(".alert").classList.remove("show")
+          
+        }, 2000);
+      })
       window.addEventListener("scroll", scrollAction);
       window.addEventListener("resize", () => {
         setUpmobileHeight();
@@ -49,7 +55,7 @@ document.addEventListener(
           WhenStartAnimation.navBarAnimation();
           WhenStartAnimation.sectionsAnimation();
         }
-        swipe.initClientsNestedSlider(dimentions);
+        // swipe.initClientsNestedSlider(dimentions);
 
         tabFunctions();
         changeFooterPos(dimentions);

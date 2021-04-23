@@ -391,3 +391,13 @@
     }
     }
 }
+
+
+.english{
+  .nav .header ul li .lang{
+    @include respond(m){
+      margin-right: 0%;
+    margin-left: 4rem;
+    }
+  }
+}

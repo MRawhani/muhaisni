@@ -279,9 +279,7 @@ function initNestedSliders() {
       },
       900: {
         slidesPerView: 2.5,
-    centeredSlides: false,
-
-
+   
       },
       1200: {
         slidesPerView: 3.5,
@@ -304,7 +302,7 @@ function initNestedSliders() {
     //   disableOnInteraction: false
     // },
     allowTouchMove:false,
-    speed: 40000,
+    speed: 50000,
     freeModeMomentum:false,
     breakpoints: {
       1900: {
@@ -341,8 +339,8 @@ function initNestedSliders() {
   }
   var swiperNestedClients1 = new SwiperCore(".swiper-container-clients-nested1", clientesSettings);
   var swiperNestedClients2 = new SwiperCore(".swiper-container-clients-nested2", clientesSettings);
-  var swiperNestedClients3 = new SwiperCore(".swiper-container-clients-nested3", {...clientesSettings, speed:38000,});
-  var swiperNestedClients4 = new SwiperCore(".swiper-container-clients-nested4", {...clientesSettings,speed:25000});
+  var swiperNestedClients3 = new SwiperCore(".swiper-container-clients-nested3", {...clientesSettings, speed:46000,});
+  var swiperNestedClients4 = new SwiperCore(".swiper-container-clients-nested4", {...clientesSettings,speed:30000});
   function infinite1() {
     swiperNestedClients1.slideTo(swiperNestedClients1.slides.length);
     swiperNestedClients1.once('transitionEnd', function(){

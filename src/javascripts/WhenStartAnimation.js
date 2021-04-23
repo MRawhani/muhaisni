@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import { changeFooterPos } from "./helpers";
 
 const tl = gsap.timeline({});
@@ -51,17 +53,17 @@ function initAnimation(dimentions) {
     .to(".loading", {
       scaleX: 0,
       opacity: 1,
-      duration: 1.6,
+      duration:1.4,
       ease: "expo.inOut",
     })
     .to(".content-mask", {
       scaleX: 0,
 
-      duration: 1,
+      duration:1.4,
       delay: -1.3,
       ease: "expo.inOut",
     })
-    .from(".home__content", {
+   .from(".content-wrapper", {
       yPercent: 20,
       duration: 1,
 
@@ -154,7 +156,6 @@ export const navBarAnimation = function () {
             yPercent: 150,
             opacity: 0,
             // skewY: 7,
-
           },
           {
             yPercent: 0,
@@ -176,14 +177,12 @@ export const navBarAnimation = function () {
   });
 
   [...document.querySelectorAll(".nav-item-mobile a")].forEach((e) => {
-
     e.addEventListener("click", function (elem) {
-      
-  
-      [...document.querySelectorAll(".nav-item-mobile a")].forEach(element => {
-    
-    element.classList.remove("active");
-  });
+      [...document.querySelectorAll(".nav-item-mobile a")].forEach(
+        (element) => {
+          element.classList.remove("active");
+        }
+      );
 
       tl2
         .fromTo(
@@ -234,7 +233,7 @@ export const sectionsAnimation = function () {
     var tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: title,
-        toggleActions: "restart none play reset",
+        toggleActions: "restart none restart reset",
       },
     });
     tl3.from(title, {
@@ -248,61 +247,70 @@ export const sectionsAnimation = function () {
     var tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: title,
-        toggleActions: "restart none none reset",
+        toggleActions: "restart none restart reset",
       },
     });
-    tl3.from(title, {
-      opacity: 0,
-      y: 90,
-    });
+    tl3.fromTo(
+      title,
+      {
+        opacity: 0,
+        y: 90,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      }
+    );
   });
   const timeline = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.hero .nestedSwiper-overlay',
+    .timeline({
+      scrollTrigger: {
+        trigger: ".hero .nestedSwiper-overlay",
 
-      ease: "power2.inOut",
-      toggleActions: "play none restart reset",
-    },
-  })
-  .fromTo(
-    ".hero ",
-    {
-      x: 950,
-      transformOrigin: "100% 100%",
-      opacity: 1,
-    },
-    {
+        ease: "power2.inOut",
+        toggleActions: "play none restart reset",
+      },
+    })
+    .fromTo(
+      ".hero ",
+      {
+        scaleX:1.2,
+        x: 950,
+       
+        opacity: 1,
+      },
+      {
+        x: 0,
+        scaleX:1,
+
+        opacity: 1,
+        duration: 1.2,
+        ease: "expo.inOut",
+      }
+    )
+    .to(".hero .img", {
       x: 0,
+      scaleX: 0.8,
+      transformOrigin: "0 0",
+      delay: -0.8,
+      duration: 0.4,
+      ease: "expo.inOut",
+    })
+    .to(".hero .nestedSwiper-overlay", {
+      x: -950,
+      // transformOrigin:'0 0',
       opacity: 1,
-      duration: 1.2,
-      ease:"expo.inOut"
-    }
-  ).to(".hero .img", {
-    x:-100,
-    scaleX:.8,
-     transformOrigin:'0 0',
-    delay:-.8,
-    duration: .4,
-    ease:"expo.inOut"
-
-  })
-  .to(".hero .nestedSwiper-overlay", {
-    x: -950,
-    // transformOrigin:'0 0',
-    opacity: 1,
-    duration: 1,
-    ease:"expo.inOut"
-
-  }).to(".hero .img", {
-    x:0,
-    scaleX:1,
-    // transformOrigin:'0 0',
-    delay:- 1,
-    duration: 1,
-    ease:"expo.inOut"
-
-  });
+      duration: 1,
+      ease: "expo.inOut",
+    })
+    .to(".hero .img", {
+      x: 0,
+      scaleX: 1,
+      // transformOrigin:'0 0',
+      delay: -1,
+      duration: 1,
+      ease: "expo.inOut",
+    });
   const projectTriggers = document.querySelectorAll(".nestedSwiper");
 
   projectTriggers.forEach(addTimeline);
@@ -312,33 +320,68 @@ export const sectionsAnimation = function () {
     const container = project.querySelector(".swiper-container");
 
     const timeline = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: project,
+
+        ease: "expo.inOut",
+        toggleActions: "play none restart reset",
+      },
+    })
+    .fromTo(
+      project,
+      {
+        x: 950,
+        transformOrigin: "100% 100%",
+        opacity: 1,
+        
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "expo.inOut",
+
+      }
+    )
+    
+   .to(overlay, {
+      x: -950,
+      // transformOrigin:'0 0',
+      opacity: 1,
+      delay:.2,
+      duration: 1,
+      ease: "expo.inOut",
+
+    })
+    gsap
       .timeline({
         scrollTrigger: {
-          trigger: project,
+          trigger: ".contact__form",
 
           ease: "expo.inOut",
           toggleActions: "play none restart reset",
         },
       })
       .fromTo(
-        project,
-        {
-          x: 950,
-          transformOrigin: "100% 100%",
-          opacity: 1,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-        }
+       ".contact__form",
+       {
+        x: 100,
+      
+        opacity:0,
+       
+      },
+      {
+        x: 0,
+      
+        opacity:1,
+        duration: 1.2,
+        ease: "expo.inOut",
+      },
+        
       )
-      .to(overlay, {
-        x: -950,
-        // transformOrigin:'0 0',
-        opacity: 1,
-        duration: 0.8,
-      });
+      
+  
   }
 };
 export default {

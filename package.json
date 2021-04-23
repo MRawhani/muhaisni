@@ -70,13 +70,14 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
-    "@andreasremdt/simple-translator": "^2.0.3",
+    "@andreasremdt/simple-translator": "^2.0.1",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "enquirer": "^2.3.1",
     "figlet": "^1.2.3",
     "ftp-deploy": "^2.3.3",
     "gsap": "^3.6.1",
+    "i18next": "^20.2.1",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",

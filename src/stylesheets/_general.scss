@@ -778,14 +778,14 @@
 
 .content-mask {
   position: absolute;
-  background: $white-color;
+  background: $color-second;
   z-index: 2;
   left: 0;
   right: 0;
 
   bottom: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -893,5 +893,95 @@ footer {
       }
     }
 
+  }
+}
+
+
+
+.english{
+  .home__content .hero .img{
+    @include respond(xs) {
+    
+      background-position: 100%;
+
+
+    }
+    @include respond(m) {
+
+      background-position-x: 89%;
+    
+    }
+
+    @include respond(l) {
+      @include respond(h) {
+       
+        background-position-x: 85%;
+
+      }
+    }
+  }
+  .companies__box a{
+    margin-top: 4rem;
+
+    @include respond(to-h){
+      margin-top: 1rem;
+    }
+  }
+  .about__content--box {
+    @include respond(m){
+      padding: 2rem  1.6rem;
+
+      @include respond(xh){
+        padding: 2rem  2.6rem;
+
+      }
+    }
+    p{
+      @include respond(m){
+        font-size: 2rem;
+        @include respond(xh){
+        font-size: 2.4rem;
+  
+        }
+      }
+    }
+  }
+  .blogs__box{
+    text-align: left;
+  }
+  .contact__form{
+    @include respond(m){
+      margin-right: 3.4rem;
+      margin-left: 0;
+
+    }
+  }
+  .contact__detail--box .icon{
+    margin-right: 12px;
+    margin-left: 0;
+
+    @include respond(m){
+      margin-right: 10px;
+      margin-left: 0;
+
+    }
+  }
+  .page-spacing {
+    padding-right: 0;
+    padding-left: 0;
+ 
+    @include respond(m) {
+      padding-left: 8.5rem;
+      padding-right: 0;
+     
+    }
+  
+    &.home {
+     
+      @include respond(m) {
+          padding: 0  0 0 8.5rem;
+  
+      }
+    }
   }
 }

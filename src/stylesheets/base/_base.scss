@@ -66,6 +66,25 @@ body {
    direction: rtl;
    overflow: hidden;
    font-weight: 100;
+   position: relative;
+   &.english{
+   direction: ltr;
+
+   }
+}
+.lang.ar{
+    display: none !important;
+}
+.lang.en{
+    display: inline-block !important;
+}
+.english{
+    .lang.en{
+        display: none !important;
+    }
+    .lang.ar{
+        display: inline-block !important;
+    }
 }
 .hidden{
     visibility: hidden;
