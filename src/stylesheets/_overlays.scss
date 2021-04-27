@@ -21,9 +21,9 @@
 
     img {
       opacity: 1;
-      width: 17.1rem;
-      height: 16.4rem;
-
+      width: 14.1rem;
+      height: 13.9rem;
+      margin-top: -4rem;
       @include respond(m) {
         width: 20.9rem;
         height: 17.6rem;

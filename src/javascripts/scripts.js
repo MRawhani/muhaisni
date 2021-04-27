@@ -4,6 +4,7 @@ import smoothScroll from "smooth-scroll";
 import { tabFunctions } from "./Tabs";
 import swipe from "./swiperMain";
 import WhenStartAnimation from "./WhenStartAnimation";
+import scrollSpy from 'simple-scrollspy'
 import {
   getWindowDimensions,
   setUpmobileHeight,
@@ -24,10 +25,16 @@ document.addEventListener(
     window.onload = function () {
       var scroll = new smoothScroll('a[href*="#"]', {
         offset: 60,
-      });
+       // updateURL: true, // Update the URL on scroll
+       // popstate: true, // Animate scrolling with the forward/backward browser buttons (requires updateURL to be true)
+     
+       });
+      
+      // new ActiveMenuLink(".navbar", options);
       setUpmobileHeight();
 
         WhenStartAnimation.initAnimation(dimentions)
+        WhenStartAnimation.updateOnScroll()
       if (dimentions.width <= 900) {
         WhenStartAnimation.navBarAnimation();
         WhenStartAnimation.sectionsAnimation();
@@ -51,10 +58,10 @@ document.addEventListener(
       window.addEventListener("resize", () => {
         setUpmobileHeight();
         dimentions = getWindowDimensions();
-        if (dimentions.width <= 900) {
-          WhenStartAnimation.navBarAnimation();
-          WhenStartAnimation.sectionsAnimation();
-        }
+        // if (dimentions.width <= 900) {
+        //   WhenStartAnimation.navBarAnimation();
+        //   WhenStartAnimation.sectionsAnimation();
+        // }
         // swipe.initClientsNestedSlider(dimentions);
 
         tabFunctions();

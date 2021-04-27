@@ -62,9 +62,16 @@ const enableSwiper = function() {
         } else if (swiper.realIndex === 5) {
           document.getElementById("footer").classList.add("with-padding");
           document.getElementById("footer").classList.remove("small");
-        } else {
+        }  else {
           document.getElementById("footer").classList.remove("small");
           document.getElementById("footer").classList.remove("with-padding");
+        }
+        if (swiper.realIndex === 0) {
+          document.getElementById("footer").classList.add("show-icons");
+          
+        } else {
+          document.getElementById("footer").classList.remove("show-icons");
+
         }
       },
       slideChangeTransitionStart(swipe) {
