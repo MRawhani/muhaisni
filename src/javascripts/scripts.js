@@ -32,10 +32,12 @@ document.addEventListener(
       setUpmobileHeight();
 
       animationScripts.initAnimation(dimentions);
-      animationScripts.updateOnScroll();
       if (dimentions.width <= 900) {
+      animationScripts.updateOnScroll();
+
         animationScripts.navBarAnimation();
         animationScripts.sectionsAnimation();
+        
       }
       // changeFooterPos(dimentions);
       swipe.initSwiper();

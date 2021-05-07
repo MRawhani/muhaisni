@@ -3,10 +3,10 @@ This project was bootstrapped with [static-site-boilerplate](https://docs.static
 ## Available Scripts
 
 After downloading or cloning the project, you can open your terminal in the root directory of the downloaded files,
-and tun these npm commands:
+and run these npm commands:
 
 ### `npm insall`
-To download all the dependincies,
+To download all the dependencies,
 
 ### `npm start`
 
@@ -32,9 +32,9 @@ Your app is ready to be deployed!
 ## The last step
 
 after successfully running `npm run build:dist`, and you have the `dist` folder ready, YOU MUST do these easy steps:
-- go to the images folder of the **src** directory  `/src/images`, and copy three items:-  Clients directory, small_logo_ar.png, and small_logo_en.png.
-- Now go to  the images folder of the **dist** directory, and paste the three items there.
+- go to the images folder of the **src** directory  `/src/images`, and copy three items:-  **clients directory, small_logo_ar.png, and small_logo_en.png**
+- Now go to  the images folder of the **dist** directory `/dist/images`, and paste the three items there.
 
 
-Now you dist folder is ready to deploy.
+Now you `dist` folder is ready to deploy.
 
