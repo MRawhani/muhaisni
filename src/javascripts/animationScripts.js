@@ -61,17 +61,17 @@ function initAnimation(dimentions) {
     .to(".loading", {
       scaleX: 0,
       opacity: 1,
-      duration:1.7,
+      duration: 1.7,
       ease: "expo.inOut",
     })
     .to(".content-mask", {
       scaleX: 0,
 
-      duration:1.7,
+      duration: 1.7,
       delay: -1.49,
       ease: "expo.inOut",
     })
-   .from(".content-wrapper", {
+    .from(".content-wrapper", {
       yPercent: 20,
       duration: 1,
 
@@ -81,15 +81,16 @@ function initAnimation(dimentions) {
     .from("#nav", { yPercent: -10, opacity: 0 })
     .add(() => {
       document.getElementById("social-wrapper").classList.add("show-icons");
-      
-      changeFooterPos(dimentions)});
-    gsap.from('.hero', {
-      translateY: -30,
-      duration: 2.6,
-      yoyo: true,
-      repeat: -1,
-      ease: "Power1.easeInOut",
+
+      changeFooterPos(dimentions);
     });
+  gsap.from(".hero", {
+    translateY: -30,
+    duration: 2.6,
+    yoyo: true,
+    repeat: -1,
+    ease: "Power1.easeInOut",
+  });
 }
 
 export const navBarAnimation = function () {
@@ -123,7 +124,7 @@ export const navBarAnimation = function () {
         .to(".nav.mobile", {
           scaleX: 0,
           opacity: 1,
-          delay: -.7,
+          delay: -0.7,
           duration: 1.6,
           ease: "expo.inOut",
           // rotationZ: 0.01,
@@ -221,7 +222,7 @@ export const navBarAnimation = function () {
         .to(".nav.mobile", {
           scaleX: 0,
           opacity: 1,
-          delay: -.7,
+          delay: -0.7,
           duration: 1.6,
           ease: "expo.inOut",
           // rotationZ: 0.01,
@@ -261,16 +262,16 @@ export const sectionsAnimation = function () {
   // });
 
   const fadeUpElems = gsap.utils.toArray(".fade-up");
-  fadeUpElems.forEach((title) => {
+  fadeUpElems.forEach((elem) => {
     var tl3 = gsap.timeline({
       scrollTrigger: {
-        trigger: title,
-    
+        trigger: elem,
+
         toggleActions: "play complete none reset ",
       },
     });
     tl3.fromTo(
-      title,
+      elem,
       {
         opacity: 0,
         y: 90,
@@ -293,86 +294,84 @@ export const sectionsAnimation = function () {
     .fromTo(
       ".hero .img",
       {
-       
         x: 990,
-       
+
         opacity: 1,
       },
       {
         x: 0,
-        
+
         opacity: 1,
         duration: 2,
         ease: "expo.inOut",
       }
-    )
-    // .to(".hero .img", {
-    //   x: 0,
-    //   scaleX: 0.8,
-    //   transformOrigin: "0 0",
-    //   delay: -0.8,
-    //   duration: 0.4,
-    //   ease: "expo.inOut",
-    // })
-    // .to(".hero .nestedSwiper-overlay", {
-    //   x: -950,
-    //   // transformOrigin:'0 0',
-    //   opacity: 1,
-    //   duration: 1,
-    //   ease: "expo.inOut",
-    // })
-    // .to(".hero .img", {
-    //   x: 0,
-    //   scaleX: 1,
-    //   // transformOrigin:'0 0',
-    //   delay: -1,
-    //   duration: 1,
-    //   ease: "expo.inOut",
-    // });
-  const projectTriggers = document.querySelectorAll(".nestedSwiper.has-overlay");
+    );
+  // .to(".hero .img", {
+  //   x: 0,
+  //   scaleX: 0.8,
+  //   transformOrigin: "0 0",
+  //   delay: -0.8,
+  //   duration: 0.4,
+  //   ease: "expo.inOut",
+  // })
+  // .to(".hero .nestedSwiper-overlay", {
+  //   x: -950,
+  //   // transformOrigin:'0 0',
+  //   opacity: 1,
+  //   duration: 1,
+  //   ease: "expo.inOut",
+  // })
+  // .to(".hero .img", {
+  //   x: 0,
+  //   scaleX: 1,
+  //   // transformOrigin:'0 0',
+  //   delay: -1,
+  //   duration: 1,
+  //   ease: "expo.inOut",
+  // });
+  const projectTriggers = document.querySelectorAll(
+    ".nestedSwiper.has-overlay"
+  );
 
   projectTriggers.forEach(addTimeline);
 
   function addTimeline(project, index) {
     const overlay = project.querySelector(".nestedSwiper-overlay");
     const container = project.querySelector(".swiper-container");
-    let value = index%2 ===0 ? 950: -950
-    let origin = index%2 ===0 ? "100% 100%": "0 0"
+    let value = index % 2 === 0 ? 950 : -950;
+    let origin = index % 2 === 0 ? "100% 100%" : "0 0";
     const timeline = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: project,
-        // scrub:true,
-        ease: "expo.inOut",
-        toggleActions: "play complete none reset ",
-      },
-    })
-   
-    .fromTo(
-      project,
-      {
-        x: value,
-        transformOrigin: origin,
-        
-      },
-      {
-        x: 0,
-       
+      .timeline({
+        scrollTrigger: {
+          trigger: project,
+          // scrub:true,
+          ease: "expo.inOut",
+          toggleActions: "play complete none reset ",
+        },
+      })
+
+      .fromTo(
+        project,
+        {
+          x: value,
+          transformOrigin: origin,
+        },
+        {
+          x: 0,
+
+          duration: 1,
+          ease: "expo.inOut",
+        }
+      )
+
+      .to(overlay, {
+        x: -value,
+        // transformOrigin:'0 0',
+        opacity: 1,
+        delay: 0.2,
         duration: 1,
         ease: "expo.inOut",
-
-      }
-    )
-  
-   .to(overlay, {
-      x: -value,
-      // transformOrigin:'0 0',
-      opacity: 1,
-      delay:.2,
-      duration: 1,
-      ease: "expo.inOut",
-
-    })
+      });
     // gsap
     //   .timeline({
     //     scrollTrigger: {
@@ -386,294 +385,269 @@ export const sectionsAnimation = function () {
     //    ".contact__form",
     //    {
     //     y: 90,
-      
+
     //     opacity:0,
-       
+
     //   },
     //   {
     //     y: 0,
-      
+
     //     opacity:1,
     //     duration: 1.2,
     //     ease: "expo.inOut",
     //   },
-        
+
     //   )
-      
-  
   }
-  addTimelineToBlog(document.querySelector(".has--blogs-overlay"))
+  addTimelineToBlog(document.querySelector(".has--blogs-overlay"));
   function addTimelineToBlog(project) {
     const overlay = project.querySelector(".nestedSwiper-overlay");
     const container = project.querySelector(".swiper-container");
-    let value =  -950
-    let origin = "0 0"
+    let value = -950;
+    let origin = "0 0";
     const timeline = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: project,
-        // scrub:true,
+      .timeline({
+        scrollTrigger: {
+          trigger: project,
+          // scrub:true,
+          ease: "expo.inOut",
+          toggleActions: "play complete none reset ",
+        },
+      })
+      .add(() => {
+        let ele = document.querySelector(".share-box.show");
+        ele && ele.classList.remove("show");
+        document
+          .querySelector(".swiper-container-blogs-nested")
+          .classList.remove("with-padding");
+      })
+      .to(".swiper-container-blogs-nested", {
+        opacity: 0,
+        delay: 0,
+        duration: 0.2,
         ease: "expo.inOut",
-        toggleActions: "play complete none reset ",
-      },
-    })
-    .add(()=>{
-      let ele = document.querySelector('.share-box.show')
-      ele && ele.classList.remove("show")
-      document.querySelector(".swiper-container-blogs-nested").classList.remove("with-padding")
-    })
-    .to(".swiper-container-blogs-nested", {
-    
-      opacity: 0,
-      delay:0,
-      duration: .2,
-      ease: "expo.inOut",
+      })
+      .fromTo(
+        project,
+        {
+          x: value,
+          transformOrigin: origin,
+        },
+        {
+          x: 0,
 
-    })
-    .fromTo(
-      project,
-      {
-        x: value,
-        transformOrigin: origin,
-        
-      },
-      {
-        x: 0,
-       
+          duration: 1,
+          ease: "expo.inOut",
+        }
+      )
+      .to(".swiper-container-blogs-nested", {
+        opacity: 1,
+        delay: 0,
+        duration: 0.2,
+        ease: "expo.inOut",
+      })
+      .to(overlay, {
+        x: -value,
+        // transformOrigin:'0 0',
+        opacity: 1,
+        delay: 0.2,
         duration: 1,
         ease: "expo.inOut",
-
-      }
-    )
-    .to(".swiper-container-blogs-nested", {
-    
-      opacity: 1,
-      delay:0,
-      duration: .2,
-      ease: "expo.inOut",
-
-    })
-   .to(overlay, {
-      x: -value,
-      // transformOrigin:'0 0',
-      opacity: 1,
-      delay:.2,
-      duration: 1,
-      ease: "expo.inOut",
-
-    }).add(()=>{
-      document.querySelector(".swiper-container-blogs-nested").classList.add("with-padding")
-    })
-  
-      
-  
+      })
+      .add(() => {
+        document
+          .querySelector(".swiper-container-blogs-nested")
+          .classList.add("with-padding");
+      });
   }
 };
-export const updateOnScroll = function(){
- const navs=  document.querySelectorAll(".nav-item-mobile a")
- const makeActive = (link) => navs[link].classList.add("active");
- const removeActive = (link) => navs[link].classList.remove("active");
- const removeAllActive = () => [...Array(navs.length).keys()].forEach((link) => removeActive(link));
+export const updateOnScroll = function () {
+  const navs = document.querySelectorAll(".nav-item-mobile a");
+  const makeActive = (link) => navs[link].classList.add("active");
+  const removeActive = (link) => navs[link].classList.remove("active");
+  const removeAllActive = () =>
+    [...Array(navs.length).keys()].forEach((link) => removeActive(link));
   ScrollTrigger.create({
     trigger: "#home",
-        
 
+    start: "top center",
+    onEnter: () => {
+      window.location.hash = "#!home";
+      removeAllActive();
+      makeActive(0);
+    },
+    // onLeave:()=>{
 
-    start:'top center',
-    onEnter: ()=>{
-    
-      window.location.hash = '#!home';
-        removeAllActive()
-        makeActive(0)
-        },
-        // onLeave:()=>{
-    
-        //   window.location.hash = '#!about';
-        //     removeAllActive()
-        //     makeActive(1)
-        //     },
-      
-        onLeaveBack: ()=>{
-    
-          window.location.hash = '#!home';
-            removeAllActive()
-            makeActive(1)
-            },
-   
-  //   onEnterBack: ()=>{
-     
-  // window.location.hash = '#!home';
-  // removeAllActive()
-  // makeActive(0)
-        // },
-   
+    //   window.location.hash = '#!about';
+    //     removeAllActive()
+    //     makeActive(1)
+    //     },
+
+    onLeaveBack: () => {
+      window.location.hash = "#!home";
+      removeAllActive();
+      makeActive(1);
+    },
+
+    //   onEnterBack: ()=>{
+
+    // window.location.hash = '#!home';
+    // removeAllActive()
+    // makeActive(0)
+    // },
   });
   ScrollTrigger.create({
     trigger: "#about",
-        
 
-    
-    start:'top center',
-    onEnter: ()=>{
-  // window.location.hash = '#about';
-  window.location.hash = '#!about';
-  removeAllActive()
-  makeActive(1)
+    start: "top center",
+    onEnter: () => {
+      // window.location.hash = '#about';
+      window.location.hash = "#!about";
+      removeAllActive();
+      makeActive(1);
     },
     // onLeave:()=>{
-    
+
     //   window.location.hash = '#!clients';
     //     removeAllActive()
     //     makeActive(2)
     //     },
-  
-    onLeaveBack: ()=>{
 
-      window.location.hash = '#!home';
-        removeAllActive()
-        makeActive(0)
-        },
+    onLeaveBack: () => {
+      window.location.hash = "#!home";
+      removeAllActive();
+      makeActive(0);
+    },
     // onEnterBack: ()=>{
-  
+
     //   window.location.hash = '#!about';
     //   removeAllActive()
     //   makeActive(1)
     //     },
-  
   });
   ScrollTrigger.create({
     trigger: "#clients",
-    
+
     // onLeave:()=>{
-    
+
     //   window.location.hash = '#!companies';
     //     removeAllActive()
     //     makeActive(3)
     //     },
-  
-    onLeaveBack: ()=>{
 
-      window.location.hash = '#!about';
-        removeAllActive()
-        makeActive(1)
-    
-      },
-      start:'top center',
-    onEnter: ()=>{
-  // window.location.hash = '#clients';
-  window.location.hash = '#!clients';
-  removeAllActive()
-  makeActive(2)
+    onLeaveBack: () => {
+      window.location.hash = "#!about";
+      removeAllActive();
+      makeActive(1);
     },
-   
+    start: "top center",
+    onEnter: () => {
+      // window.location.hash = '#clients';
+      window.location.hash = "#!clients";
+      removeAllActive();
+      makeActive(2);
+    },
+
     // onEnterBack: ()=>{
-  
+
     //   window.location.hash = '#!clients';
     //   removeAllActive()
     //   makeActive(2)
     //     },
-  
   });
   ScrollTrigger.create({
     trigger: "#companies",
-        
+
     // onLeave:()=>{
-    
+
     //   window.location.hash = '#!blogs';
     //     removeAllActive()
     //     makeActive(4)
     //     },
-  
-    onLeaveBack: ()=>{
 
-      window.location.hash = '#!clients';
-        removeAllActive()
-        makeActive(2)
-        },
-    
-        start:'top center',
-    onEnter: ()=>{
-  // window.location.hash = '#companies';
-  window.location.hash = '#!companies';
-  removeAllActive()
-  makeActive(3)
+    onLeaveBack: () => {
+      window.location.hash = "#!clients";
+      removeAllActive();
+      makeActive(2);
     },
-   
+
+    start: "top center",
+    onEnter: () => {
+      // window.location.hash = '#companies';
+      window.location.hash = "#!companies";
+      removeAllActive();
+      makeActive(3);
+    },
+
     // onEnterBack: ()=>{
-  
+
     //   window.location.hash = '#!companies';
     //   removeAllActive()
     //   makeActive(3)
     //     },
-  
   });
   ScrollTrigger.create({
     trigger: "#blogs",
-        
+
     // onLeave:()=>{
-    
+
     //   window.location.hash = '#!contact';
     //     removeAllActive()
     //     makeActive(5)
     //     },
-  
-    onLeaveBack: ()=>{
 
-      window.location.hash = '#!companies';
-        removeAllActive()
-        makeActive(3)
-        },
-    
-        start:'top center',
-    onEnter: ()=>{
-  // window.location.hash = '#blogs';
-  window.location.hash = '#!blogs';
-  removeAllActive()
-  makeActive(4)
+    onLeaveBack: () => {
+      window.location.hash = "#!companies";
+      removeAllActive();
+      makeActive(3);
     },
-   
+
+    start: "top center",
+    onEnter: () => {
+      // window.location.hash = '#blogs';
+      window.location.hash = "#!blogs";
+      removeAllActive();
+      makeActive(4);
+    },
+
     // onEnterBack: ()=>{
-  
+
     //   window.location.hash = '#!blogs';
     //   removeAllActive()
     //   makeActive(4)
     //     },
-  
   });
   ScrollTrigger.create({
     trigger: "#contact",
     // onLeave:()=>{
-    
+
     //   window.location.hash = '#!contact';
     //     removeAllActive()
     //     makeActive(5)
     //     },
-  
-    onLeaveBack: ()=>{
 
-      window.location.hash = '#!blogs';
-        removeAllActive()
-        makeActive(4)
-        },
-
-    
-        start:'top center',
-    onEnter: ()=>{
-  // window.location.hash = '#contact';
-  window.location.hash = '#!contact';
-  removeAllActive()
-  makeActive(5)
+    onLeaveBack: () => {
+      window.location.hash = "#!blogs";
+      removeAllActive();
+      makeActive(4);
     },
-   
+
+    start: "top center",
+    onEnter: () => {
+      // window.location.hash = '#contact';
+      window.location.hash = "#!contact";
+      removeAllActive();
+      makeActive(5);
+    },
+
     // onEnterBack: ()=>{
-  
+
     //   window.location.hash = '#!contact';
     //   removeAllActive()
     //   makeActive(5)
     //     },
-  
   });
-}
+};
 export default {
   initAnimation,
   navBarAnimation,

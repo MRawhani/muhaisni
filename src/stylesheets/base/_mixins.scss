@@ -1,129 +1,192 @@
-
 @mixin transition-mix ($property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
-    transition-property: $property; 
-    transition-duration: $duration;
-    transition-timing-function: $timing;
-    transition-delay: $delay;
-  }
-  
-  @mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
-    position: absolute;
-    top: $top;
-    left: $left;
-    right: $right;
-    bottom: $bottom;
-  }
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
 @mixin clearfix {
-    &::after{
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
-@mixin linear($deg,$first,$second) {
-    background: $first;
-  
-        background: linear-gradient($deg, $first 0%, $second 100%) no-repeat;
+
+@mixin linear($deg, $first, $second) {
+  background: $first;
+
+  background: linear-gradient($deg, $first 0%, $second 100%) no-repeat;
 }
-@mixin linear3($deg,$first,$second,$third) {
-    background: $first;
-  
-        background: linear-gradient($deg, $first 0%, $second 90%,$third 100%);
+
+@mixin linear3($deg, $first, $second, $third) {
+  background: $first;
+
+  background: linear-gradient($deg, $first 0%, $second 90%, $third 100%);
 }
-@mixin sizePerH($size) {
-  
-}
+
+@mixin sizePerH($size) {}
 
 // 530 min Small
 // 830 min Medium
 // 1200 min Large
 @mixin atSmall {
-    @media (min-width: 530) {
-        @content
-    };
+  @media (min-width: 530) {
+    @content
+  }
+
+  ;
 }
-@mixin respond($breakpoint){
-    @if $breakpoint == xsm{
-        @media (min-width: 250px) { //400
-            @content
-        };
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==xsm {
+    @media (min-width: 250px) {
+      //400
+      @content
     }
-    @if $breakpoint == xs{
-        @media (min-width: 550px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==xs {
+    @media (min-width: 550px) {
+      //400
+      @content
     }
-    @if $breakpoint == s{
-        @media (min-width: 768px) { //569
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==s {
+    @media (min-width: 768px) {
+      //569
+      @content
     }
-  
-    @if $breakpoint == t{
-        @media (min-width: 800px) { //768
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==t {
+    @media (min-width: 800px) {
+      //768
+      @content
     }
-    @if $breakpoint == m{
-        @media (min-width: 900px) { //900
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==m {
+    @media (min-width: 900px) {
+      //900
+      @content
     }
-    @if $breakpoint == l{
-        @media (min-width: 1600px) { //1100
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==l {
+    @media (min-width: 1600px) {
+      //1100
+      @content
     }
-    @if $breakpoint == xl{
-        @media (min-width: 1900px) { //1800
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==xl {
+    @media (min-width: 1900px) {
+      //1800
+      @content
     }
-    @if $breakpoint == xxl{ 
-        @media (min-width: 2500px) { //1800
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==xxl {
+    @media (min-width: 2500px) {
+      //1800
+      @content
     }
-    @if $breakpoint == xxxl{ 
-        @media (min-width: 3000px) { //2500
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==xxxl {
+    @media (min-width: 3000px) {
+      //2500
+      @content
     }
-    @if $breakpoint == to-xh{
-        @media (max-height: 670px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==to-xh {
+    @media (max-height: 670px) {
+      //400
+      @content
     }
-    @if $breakpoint == to-h{
-        @media (max-height: 800px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==to-h {
+    @media (max-height: 800px) {
+      //400
+      @content
     }
-    @if $breakpoint == xh{
-        @media (min-height: 700px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==xh {
+    @media (min-height: 700px) {
+      //400
+      @content
     }
-    @if $breakpoint == h{
-        @media (min-height: 900px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==h {
+    @media (min-height: 900px) {
+      //400
+      @content
     }
-    @if $breakpoint == h2{
-        @media (min-height: 1000px) { //400
-            @content
-        };
+
+    ;
+  }
+
+  @if $breakpoint==h2 {
+    @media (min-height: 1000px) {
+      //400
+      @content
     }
+
+    ;
+  }
 
 }
 
 @mixin atMedium {
-    @media (min-width: 830) {
-        @content
-    };
+  @media (min-width: 830) {
+    @content
+  }
+
+  ;
 }
+
 @mixin atLarge {
-    @media (min-width: 1200) {
-        @content
-    };
+  @media (min-width: 1200) {
+    @content
+  }
+
+  ;
 }

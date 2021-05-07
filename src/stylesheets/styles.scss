@@ -20,8 +20,8 @@
   display: block;
   z-index: 7;
   position: relative;
-//   top: 6px;
-//   right: 1.5vw;
+  //   top: 6px;
+  //   right: 1.5vw;
   width: 43px;
   height: 40px;
   cursor: pointer;
@@ -52,8 +52,7 @@
 .btn-mm:active .mmbar,
 .btn-mm:focus .mmbar,
 .btn-mm:hover .mmbar {
-    background-color: $second
-
+  background-color: $second
 }
 
 .mmbar {
@@ -132,7 +131,7 @@
 }
 
 // @media (max-width:767px) {
- 
+
 
 //   .btn-mm {
 //     top: 5px;
@@ -140,41 +139,40 @@
 //   }
 // }
 .nav-open .btn-mm .mmbar-t {
-    -webkit-transform: translateY(8px) rotate(
-45deg
-);
-    -moz-transform: translateY(8px) rotate(45deg);
-    -ms-transform: translateY(8px) rotate(45deg);
-    -o-transform: translateY(8px) rotate(45deg);
-    transform: translateY(8px) rotate(
-45deg
-);
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -moz-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
+
 .nav-open .btn-mm .mmbar {
-    background-color: $second;
+  background-color: $second;
 }
-.nav-open .btn-mm .mmbar-dot, .nav-open .btn-mm .mmbar-m {
-    -webkit-transform: translateX(-23px);
-    -moz-transform: translateX(-23px);
-    -ms-transform: translateX(-23px);
-    -o-transform: translateX(-23px);
-    transform: translateX(-23px);
+
+.nav-open .btn-mm .mmbar-dot,
+.nav-open .btn-mm .mmbar-m {
+  -webkit-transform: translateX(-23px);
+  -moz-transform: translateX(-23px);
+  -ms-transform: translateX(-23px);
+  -o-transform: translateX(-23px);
+  transform: translateX(-23px);
 }
+
 .nav-open .btn-mm .mmbar {
-    background-color: $second;
+  background-color: $second;
 }
+
 .nav-open .btn-mm .mmbar {
-    background-color: $second;
+  background-color: $second;
 }
+
 .nav-open .btn-mm .mmbar-b {
-    -webkit-transform: translateY(8px) rotate(
--45deg
-);
-    -moz-transform: translateY(8px) rotate(-45deg);
-    -ms-transform: translateY(8px) rotate(-45deg);
-    -o-transform: translateY(8px) rotate(-45deg);
-    transform: translateY(8px) rotate(
--45deg
-);
+  -webkit-transform: translateY(8px) rotate(-45deg);
+  -moz-transform: translateY(8px) rotate(-45deg);
+  -ms-transform: translateY(8px) rotate(-45deg);
+  -o-transform: translateY(8px) rotate(-45deg);
+  transform: translateY(8px) rotate(-45deg);
 }
+
 @import 'base/utils';

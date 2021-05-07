@@ -1,208 +1,238 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-@font-face { 
-    font-family: 'neo-regular';
-    font-style: normal;
-  
-    src: local("neo-regular"), url('../assets/fonts/NeoSansArabicRegular.ttf') format('truetype');
-    /* IE9 Compat Modes */
-  }
-  @font-face { 
-    font-family: 'neo-medium';
-    font-weight: 500;
-    src: local("neo-medium"), url('../assets/fonts/NeoSansArabicMedium.ttf') format('truetype');
-    /* IE9 Compat Modes */
-  }
-  @font-face { 
-    font-family: 'neo-bold';
-  
-    src: local("neo-bold"), url('../assets/fonts/NeoSansArabicBold.ttf') format('truetype');
-    /* IE9 Compat Modes */
-  }
-  html {
-    font-size: 10px;
-    @include respond(s){
-        font-size: 9px;
-    
-        }
-        @include respond(m){
-            font-size: 8px;
-            @include respond(to-h){
-                font-size: 7px;
-            
-                }
-            }
-           
-            @include respond(l){
-                font-size: 9px;
-                @include respond(to-h){
-                    font-size: 8px;
-                
-                    }
-                }
-                @include respond(xl){
-                    font-size: 1
-                    0px;
-                    @include respond(to-h){
-                        font-size: 8px;
-                    
-                        }
-                    }
-  
-   
+@font-face {
+  font-family: 'neo-regular';
+  font-style: normal;
+
+  src: local("neo-regular"), url('../assets/fonts/NeoSansArabicRegular.ttf') format('truetype');
+  /* IE9 Compat Modes */
 }
+
+@font-face {
+  font-family: 'neo-medium';
+  font-weight: 500;
+  src: local("neo-medium"), url('../assets/fonts/NeoSansArabicMedium.ttf') format('truetype');
+  /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'neo-bold';
+
+  src: local("neo-bold"), url('../assets/fonts/NeoSansArabicBold.ttf') format('truetype');
+  /* IE9 Compat Modes */
+}
+
+html {
+  font-size: 10px;
+
+  @include respond(s) {
+    font-size: 9px;
+
+  }
+
+  @include respond(m) {
+    font-size: 8px;
+
+    @include respond(to-h) {
+      font-size: 7px;
+
+    }
+  }
+
+  @include respond(l) {
+    font-size: 9px;
+
+    @include respond(to-h) {
+      font-size: 8px;
+
+    }
+  }
+
+  @include respond(xl) {
+    font-size: 1 0px;
+
+    @include respond(to-h) {
+      font-size: 8px;
+
+    }
+  }
+
+
+}
+
 body {
-    box-sizing: border-box;
-   font-family: "neo-regular" , Arial;
-   font-size: $default-font;
-   color: $color-typo-second;
-   direction: rtl;
-   overflow: hidden;
-   font-weight: 100;
-   position: relative;
-   &.english{
-   direction: ltr;
+  box-sizing: border-box;
+  font-family: "neo-regular", Arial;
+  font-size: $default-font;
+  color: $color-typo-second;
+  direction: rtl;
+  overflow: hidden;
+  font-weight: 100;
+  position: relative;
 
-   }
+  &.english {
+    direction: ltr;
+
+  }
 }
-.lang.ar{
+
+.lang.ar {
+  display: none !important;
+}
+
+.lang.en {
+  display: inline-block !important;
+}
+
+.english {
+  .lang.en {
     display: none !important;
-}
-.lang.en{
+  }
+
+  .lang.ar {
     display: inline-block !important;
+  }
 }
-.english{
-    .lang.en{
-        display: none !important;
-    }
-    .lang.ar{
-        display: inline-block !important;
-    }
+
+.hidden {
+  visibility: hidden;
 }
-.hidden{
-    visibility: hidden;
+
+span {
+  display: inline-block;
 }
-span{
-    display: inline-block;
-}
-hr{
-   
-    margin-top:  1rem;
+
+hr {
+
+  margin-top: 1rem;
 
 }
+
 ol,
 ul {
-    list-style: none;
-   
+  list-style: none;
+
 
 }
 
 
-li { 
-    display: list-item;
-    //margin-left: 30px
+li {
+  display: list-item;
+  //margin-left: 30px
 
 }
+
 a {
-    text-decoration: none ;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
   //  font-size: 1.4rem;
-    cursor: pointer;
-    
-    font-weight: 500;
-    // font-family: "Cairo", Helvetica Neue, Arial, Liberation Sans, FreeSans, sans-serif
+  cursor: pointer;
+
+  font-weight: 500;
+  // font-family: "Cairo", Helvetica Neue, Arial, Liberation Sans, FreeSans, sans-serif
 
 
 }
-h1,h2,h3,h4,h5,h6{
-    // padding-bottom: 5px;
-    font-weight: 100;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // padding-bottom: 5px;
+  font-weight: 100;
 }
+
 img {
-    color: transparent;
-    font-size: 0;
-    vertical-align: middle;
-    -ms-interpolation-mode: bicubic
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic
 }
 
 p {
-    font-weight: 300;
-    color: $color-typo-second;
+  font-weight: 300;
+  color: $color-typo-second;
 
-    font-size: 1.8rem;
-    line-height: 1;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 h1 {
-    font-size: 25px;
-   margin: 0;
+  font-size: 25px;
+  margin: 0;
 }
 
 
 h2 {
-    font-size: 23px
+  font-size: 23px
 }
 
 
 
 h4 {
-    font-size: 19px
+  font-size: 19px
 }
 
 h5 {
-    font-size: 17px
+  font-size: 17px
 }
 
 h6 {
-    font-size: 15px
+  font-size: 15px
 }
 
 
 
 section {
-    display: block
+  display: block
 }
 
 img {
-    color: transparent;
-    font-size: 0;
-    vertical-align: middle;
-    -ms-interpolation-mode: bicubic
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic
 }
 
 
 td,
-th { 
-    font-weight: 400;
-    vertical-align: top;
-    text-align: left
+th {
+  font-weight: 400;
+  vertical-align: top;
+  text-align: left
 }
 
-.f-bold{
-    font-family: 'neo-bold';
+.f-bold {
+  font-family: 'neo-bold';
 }
-.f-medium{
-    font-family: 'neo-medium';
+
+.f-medium {
+  font-family: 'neo-medium';
 }
+
 .f-regular {
-    font-family: 'neo-regular';
+  font-family: 'neo-regular';
 }
+
 textarea {
-    resize: none;
-  }
-*  {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-  }
+  resize: none;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

@@ -81,6 +81,7 @@ export const insertLogosToClientsPage = function () {
   }
 };
 
+//not used currently
 export const insertBlogs = function () {
   let para = `
   الفلبين هي من أوائل البلدان التي زرتها في حياتي بعد الهند والصين وكانت بالنسبة لي وشعبه لطيف في التعامل على اكمل وجه والله في التعامل على اكمل وجه والل في التعامل على اكمل وجه والل
@@ -89,9 +90,10 @@ export const insertBlogs = function () {
    The Philippines is one of the first countries that I visited in my life after India and China, and it was for me and its people kind in dealing perfectly well, and God is in dealing perfectly well.
      `;
   for (let index = 0; index < 7; index++) {
-    document.getElementById("blogs-wrapper")&&document.getElementById("blogs-wrapper").insertAdjacentHTML(
-      "beforeend",
-      `
+    document.getElementById("blogs-wrapper") &&
+      document.getElementById("blogs-wrapper").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="swiper-slide">
         <div class="blogs__box">
           <div class="blogs__box--img"
@@ -121,10 +123,11 @@ export const insertBlogs = function () {
         </div>
         </div>
     `
-    );
-    document.getElementById("blogs-wrapper-en") &&  document.getElementById("blogs-wrapper-en").insertAdjacentHTML(
-      "beforeend",
-      `
+      );
+    document.getElementById("blogs-wrapper-en") &&
+      document.getElementById("blogs-wrapper-en").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="swiper-slide">
         <div class="blogs__box">
           <div class="blogs__box--img"
@@ -154,28 +157,42 @@ export const insertBlogs = function () {
         </div>
         </div>
     `
-    );
+      );
   }
 };
 
+
+// for changing website layout between mobile and desktop
 export const changeFooterPos = (dimentions) => {
   if (dimentions.width > 900) {
-    if (
-      dimentions.height * 2 + 150 < dimentions.width ||
-      dimentions.height < 600 ||
-      (dimentions.width > 1900 && dimentions.height < 950)
-    ) {
-      // document.getElementById('footer').classList.add('putDown')
-      // document.getElementById('arrows-wrapper').classList.add('custom-position')
-      // document.body.style.overflow = 'auto'
-    } else {
+    document.getElementById("footer").classList.contains("putDown") &&
       document.getElementById("footer").classList.remove("putDown");
+
+    ///
+    document
+      .getElementById("arrows-wrapper")
+      .classList.contains("custom-position") &&
       document
         .getElementById("arrows-wrapper")
         .classList.remove("custom-position");
 
-      document.body.style.overflow = "hidden";
-    }
+    document.body.style.overflow = "hidden";
+    // if (
+    //   dimentions.height * 2 + 150 < dimentions.width ||
+    //   dimentions.height < 600 ||
+    //   (dimentions.width > 1900 && dimentions.height < 950)
+    // ) {
+    //   // document.getElementById('footer').classList.add('putDown')
+    //   // document.getElementById('arrows-wrapper').classList.add('custom-position')
+    //   // document.body.style.overflow = 'auto'
+    // } else {
+    //   document.getElementById("footer").classList.remove("putDown");
+    //   document
+    //     .getElementById("arrows-wrapper")
+    //     .classList.remove("custom-position");
+
+    //   document.body.style.overflow = "hidden";
+    // }
   } else {
     document.getElementById("footer").classList.add("putDown");
     document.body.style.overflow = "auto";
@@ -183,6 +200,7 @@ export const changeFooterPos = (dimentions) => {
   }
 };
 
+//nav bar scroll event
 export const scrollAction = () => {
   const isTop = window.scrollY > 10;
   const nav1 = document.getElementById("nav");

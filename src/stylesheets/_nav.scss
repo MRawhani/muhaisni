@@ -9,7 +9,7 @@
   width: 100%;
 
   min-width: 100%;
- 
+
   z-index: 9;
   transition: all .3s;
 
@@ -61,10 +61,12 @@
         }
 
       }
-      .white-logo{
+
+      .white-logo {
         display: none;
       }
-      .main-logo{
+
+      .main-logo {
         display: block;
       }
     }
@@ -114,14 +116,15 @@
           }
         }
 
-        
-          & a {
 
-            margin: 0  2rem 0;
-          }
-        .lang{
-            margin-right: 4rem;
-            color: $color-first;
+        & a {
+
+          margin: 0 2rem 0;
+        }
+
+        .lang {
+          margin-right: 4rem;
+          color: $color-first;
         }
 
         &:hover {
@@ -171,7 +174,7 @@
 
   .mobile-nav {
     //position: fixed;
-    
+
     width: 100%;
 
 
@@ -192,30 +195,34 @@
         flex-direction: column;
         flex: 100%;
         // padding-top: 5rem;
-      
+
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-    @include respond(to-h){
-        position: relative;
-        top:0 ;
-        left: 0;
-         transform: none;
-      }
+        transform: translate(-50%, -50%);
+
+        @include respond(to-h) {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: none;
+        }
+
         & li {
 
           & a {
             position: relative;
             color: $white-color;
-            
+
             font-size: 3rem;
             transition: all .3s;
             display: inline-block;
-            @include respond(to-xh){
+
+            @include respond(to-xh) {
               font-size: 2.6rem;
-  
-              }
+
+            }
+
             &::after {
               content: '';
               display: inline-block;
@@ -248,28 +255,33 @@
           & a {
 
             margin: 1.7rem 0;
-            @include respond(to-xh){
+
+            @include respond(to-xh) {
               margin: 1.4rem 0;
-  
-              }
+
+            }
           }
-        .lang{
+
+          .lang {
             margin-bottom: 3.3rem;
-            
-        }
-        .social-media{
+
+          }
+
+          .social-media {
             display: flex;
             align-items: center;
             justify-content: center;
-            img{
-                width: 2.6rem;
-                margin: 0 1.5rem;
+
+            img {
+              width: 2.6rem;
+              margin: 0 1.5rem;
             }
-        }
-        .mail{
+          }
+
+          .mail {
             font-size: 2.2rem;
             line-height: 3rem;
-        }
+          }
         }
 
         z-index: 2;
@@ -302,11 +314,11 @@
   &.mobile {
     height: 100vh;
     // /* Fallback for browsers that do not support Custom Properties */
-   height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
     background: $color-first;
     z-index: 6;
     transform: scaleX(0);
-    transition:none;
+    transition: none;
     // opacity: 0;
     // visibility: hidden;
     // opacity: 1;
@@ -325,87 +337,100 @@
     overflow: auto;
     // width: 100%;
     transform-origin: 100% 100%;
-   @include respond(xs) {
-        width: 70%;
-      }
-    &.show-mobile-nav{
-        transform: none;
-        opacity: 1;
-        
-        visibility: visible;
-        
-   
+
+    @include respond(xs) {
+      width: 70%;
+    }
+
+    &.show-mobile-nav {
+      transform: none;
+      opacity: 1;
+
+      visibility: visible;
+
+
       .mobile-nav {
-     
+
 
         ul {
           opacity: 1;
           visibility: visible;
-         
+
           transition-delay: .5s;
-          transform: translate(-50%,-50%);
-          @include respond(to-h){
+          transform: translate(-50%, -50%);
+
+          @include respond(to-h) {
             transform: none;
           }
         }
-        a{
-          transition:none;
+
+        a {
+          transition: none;
         }
       }
-  
+
       .overlay {
         opacity: 1;
         visibility: visible;
         transition-delay: 0s;
       }
     }
-     @include respond(m) {
-      display: none;
-    }
-  
-}
-&.nav-open{
-  z-index: 7;
 
-  .logo{
-    .white-logo{
-      display: inline-block;
-    }
-    .main-logo{
+    @include respond(m) {
       display: none;
+    }
+
+  }
+
+  &.nav-open {
+    z-index: 7;
+
+    .logo {
+      .white-logo {
+        display: inline-block;
+      }
+
+      .main-logo {
+        display: none;
+      }
+    }
+  }
+
+  &.scrolled {
+    height: auto;
+
+    background: $white-color;
+    background: linear-gradient(180deg, rgba($white-color, 1) 0%, rgba($white-color, .9) 30%, rgba($white-color, .8) 50%, rgba($white-color, .5) 70%, rgba($white-color, .2) 85%, rgba($white-color, 0) 100%);
+
+    @include respond(m) {
+      background: transparent;
+    }
+
+    transition: background .3s;
+
+    &.remove-scrolled-styles {
+      background: transparent;
+
+    }
+
+    .header {
+      padding: 1rem 0 1.4rem 0;
+
+      @include respond(m) {
+        padding: 2.35rem 0 4.7rem 0;
+
+
+      }
     }
   }
 }
-  &.scrolled{
-  height: auto;
-
-      background: $white-color;
-      background: linear-gradient(180deg, rgba($white-color,1) 0%, rgba($white-color,.9) 30%,rgba($white-color,.8) 50%,rgba($white-color,.5) 70%,rgba($white-color,.2) 85%,rgba($white-color,0) 100%);
-      @include respond(m) {
-      background: transparent;
-      }
-      transition: background .3s;
-      &.remove-scrolled-styles{
-      background: transparent;
-
-      }
-      .header{
-        padding: 1rem 0 1.4rem 0;
-        @include respond(m) {
-            padding: 2.35rem 0 4.7rem 0;
-      
-      
-          }
-    }
-    }
-}
 
 
-.english{
-  .nav .header ul li .lang{
-    @include respond(m){
+.english {
+  .nav .header ul li .lang {
+    @include respond(m) {
       margin-right: 0%;
-    margin-left: 4rem;
+      margin-left: 4rem;
     }
   }
 }

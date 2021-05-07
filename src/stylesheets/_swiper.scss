@@ -250,7 +250,8 @@
     visibility: hidden;
 
   }
-  .main-swiper-button:not(.swiper-button-disabled){
+
+  .main-swiper-button:not(.swiper-button-disabled) {
     visibility: inherit;
   }
 
@@ -272,7 +273,7 @@
   width: 6.3rem;
   height: 6.3rem;
   background: $second;
- border-radius: 4px;
+  border-radius: 4px;
 
 
   &::after {
@@ -358,15 +359,16 @@
       padding-right: 0;
 
     }
-    &.swiper-container-blogs-nested{
+
+    &.swiper-container-blogs-nested {
       @include respond(m) {
         padding-left: 0;
         padding-right: 0;
-  
+
       }
-        
+
       margin-left: -3rem;
-      
+
     }
   }
 
@@ -396,34 +398,45 @@
     }
   }
 }
-.blogs-slide{
+
+.blogs-slide {
   z-index: 1;
-  @include respond(m){
-  z-index: 0;
+
+  @include respond(m) {
+    z-index: 0;
 
   }
 }
-.swiper-container-blogs-nested{
-  
+
+.swiper-container-blogs-nested {
+
   //   opacity: 0;
-  @include respond(m){
-   
-    padding-bottom: 250px; /* space required to display the tooltip */
-    margin-bottom: -250px; /*200px - 50px of the original margin*/
-    
+  @include respond(m) {
+
+    padding-bottom: 250px;
+    /* space required to display the tooltip */
+    margin-bottom: -250px;
+    /*200px - 50px of the original margin*/
+
   }
-  &.with-padding{
- padding-bottom: 250px; /* space required to display the tooltip */
-    margin-bottom: -250px; /*200px - 50px of the original margin*/
+
+  &.with-padding {
+    padding-bottom: 250px;
+    /* space required to display the tooltip */
+    margin-bottom: -250px;
+    /*200px - 50px of the original margin*/
   }
 }
-.main-swiper{
-  
-  @include respond(m){
-   
-    padding-bottom: 50px; /* space required to display the tooltip */
-    margin-bottom: -50px; /*200px - 50px of the original margin*/
-   
+
+.main-swiper {
+
+  @include respond(m) {
+
+    padding-bottom: 50px;
+    /* space required to display the tooltip */
+    margin-bottom: -50px;
+    /*200px - 50px of the original margin*/
+
   }
 }
 
@@ -434,8 +447,8 @@
     .swiper-slide-duplicate {
       .content-wrapper {
         .nestedSwiper {
-         
-          @include respond(m){
+
+          @include respond(m) {
             transform: translateX(55px);
 
           }
@@ -488,15 +501,17 @@
         padding-left: 0;
 
       }
-      &.swiper-container-blogs-nested{
-      
-       
+
+      &.swiper-container-blogs-nested {
+
+
         @include respond(m) {
           padding-left: 0;
           padding-right: 0;
         }
-      margin-left: 0;
-      margin-right: -3rem;
+
+        margin-left: 0;
+        margin-right: -3rem;
       }
     }
   }
