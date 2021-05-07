@@ -40,6 +40,8 @@ const enableSwiper = function() {
     autoHeight: false,
     // direction:'vertical',
     loop: false,
+    preventClicks: false,
+    preventClicksPropagation: false,
     allowTouchMove: false,
     mousewheel: true,
     // If we need pagination
@@ -66,11 +68,19 @@ const enableSwiper = function() {
           document.getElementById("footer").classList.remove("small");
           document.getElementById("footer").classList.remove("with-padding");
         }
-        if (swiper.realIndex === 0) {
-          document.getElementById("footer").classList.add("show-icons");
+        if (swiper.realIndex === 0 ) {
+          document.getElementById("social-wrapper").classList.add("show-icons");
+          document.getElementById("social-wrapper").classList.remove("small");
+
+          
+        }  else if (swiper.realIndex === 5) {
+          document.getElementById("social-wrapper").classList.add("show-icons");
+          document.getElementById("social-wrapper").classList.add("small");
           
         } else {
-          document.getElementById("footer").classList.remove("show-icons");
+          document.getElementById("social-wrapper").classList.remove("show-icons");
+          document.getElementById("social-wrapper").classList.remove("small");
+
 
         }
       },
@@ -392,16 +402,17 @@ infinite4();
   var swiperNestedBlogs = new SwiperCore(".swiper-container-blogs-nested", {
     slidesPerView: 2.8,
     grabCursor: true,
-    freeMode: true,
+    freeMode: false,
     nested: true,
-
+    preventClicks: false,
+preventClicksPropagation: false,
     spaceBetween: 15,
     breakpoints: {
       320: {
-        slidesPerView: 1,
+        slidesPerView: 1.08,
       },
       400: {
-        slidesPerView: 1.04,
+        slidesPerView: 1.1,
       },
       550: {
         slidesPerView: 1.4,
@@ -427,9 +438,19 @@ infinite4();
       1900: {
     spaceBetween: 40,
 
-        slidesPerView: 2.6,
+        slidesPerView: 2.8,
       },
     },
+    on: {
+      reachEnd: function (swiper) {
+       window.open('https://almuhaysini.com/blog/')
+       console.log(swiperNestedBlogs.slides.length-2);
+       console.log(swiper.slides.length-2);
+      //  setTimeout(() => {
+      //   swiperNestedBlogs.slideTo(swiperNestedBlogs.slides.length-2)
+      //  }, 200);
+      },
+    }
   });
 }
 function initClientsNestedSlider(dimentions) {

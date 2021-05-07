@@ -15,7 +15,7 @@ const config = {
   site_description: 'The main website of Almuhaisni group',
 
   // Your website's URL, used for sitemap
-  site_url: 'muhaisni.com',
+  site_url: 'muhaysini.com',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
@@ -24,7 +24,7 @@ const config = {
   viewport: 'width=device-width,initial-scale=1',
 
   // Source file for favicon generation. 512x512px recommended.
-  favicon: path.join(ROOT, '/src/images/favicon.png'),
+  favicon: path.join(ROOT, '/src/images/small_logo_ar.png'),
 
   // Local development URL
   dev_host: 'localhost',

@@ -8,7 +8,7 @@ const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 // const StyleLintPlugin = require('stylelint-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
@@ -78,26 +78,26 @@ const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map((dir) => {
 // });
 
 // Favicons
-const favicons = new FaviconsWebpackPlugin({
-  logo: config.favicon,
-  prefix: 'images/favicons/',
-  favicons: {
-    appName: config.site_name,
-    appDescription: config.site_description,
-    developerName: null,
-    developerURL: null,
-    icons: {
-      android: true,
-      appleIcon: true,
-      appleStartup: false,
-      coast: false,
-      favicons: true,
-      firefox: false,
-      windows: false,
-      yandex: false,
-    },
-  },
-});
+// const favicons = new FaviconsWebpackPlugin({
+//   logo: config.favicon,
+//   prefix: 'images/favicons/',
+//   favicons: {
+//     appName: config.site_name,
+//     appDescription: config.site_description,
+//     developerName: null,
+//     developerURL: null,
+//     icons: {
+//       android: true,
+//       appleIcon: true,
+//       appleStartup: false,
+//       coast: false,
+//       favicons: true,
+//       firefox: false,
+//       windows: false,
+//       yandex: false,
+//     },
+//   },
+// });
 
 // Webpack bar
 const webpackBar = new WebpackBar({
@@ -134,7 +134,7 @@ module.exports = [
 
   cssExtract,
   ...generateHTMLPlugins(),
-  fs.existsSync(config.favicon) && favicons,
+  // fs.existsSync(config.favicon) && favicons,
   config.env === 'production' && optimizeCss,
   config.env === 'production' && robots,
  

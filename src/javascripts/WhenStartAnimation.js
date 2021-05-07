@@ -80,12 +80,12 @@ function initAnimation(dimentions) {
     })
     .from("#nav", { yPercent: -10, opacity: 0 })
     .add(() => {
-      document.getElementById("footer").classList.add("show-icons");
+      document.getElementById("social-wrapper").classList.add("show-icons");
       
       changeFooterPos(dimentions)});
     gsap.from('.hero', {
       translateY: -30,
-      duration: 1.85,
+      duration: 2.6,
       yoyo: true,
       repeat: -1,
       ease: "Power1.easeInOut",
@@ -347,23 +347,23 @@ export const sectionsAnimation = function () {
         toggleActions: "play complete none reset ",
       },
     })
+   
     .fromTo(
       project,
       {
         x: value,
         transformOrigin: origin,
-        opacity: 1,
         
       },
       {
         x: 0,
-        opacity: 1,
-        duration: 0.8,
+       
+        duration: 1,
         ease: "expo.inOut",
 
       }
     )
-    
+  
    .to(overlay, {
       x: -value,
       // transformOrigin:'0 0',
@@ -399,6 +399,72 @@ export const sectionsAnimation = function () {
     //   },
         
     //   )
+      
+  
+  }
+  addTimelineToBlog(document.querySelector(".has--blogs-overlay"))
+  function addTimelineToBlog(project) {
+    const overlay = project.querySelector(".nestedSwiper-overlay");
+    const container = project.querySelector(".swiper-container");
+    let value =  -950
+    let origin = "0 0"
+    const timeline = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: project,
+        // scrub:true,
+        ease: "expo.inOut",
+        toggleActions: "play complete none reset ",
+      },
+    })
+    .add(()=>{
+      let ele = document.querySelector('.share-box.show')
+      ele && ele.classList.remove("show")
+      document.querySelector(".swiper-container-blogs-nested").classList.remove("with-padding")
+    })
+    .to(".swiper-container-blogs-nested", {
+    
+      opacity: 0,
+      delay:0,
+      duration: .2,
+      ease: "expo.inOut",
+
+    })
+    .fromTo(
+      project,
+      {
+        x: value,
+        transformOrigin: origin,
+        
+      },
+      {
+        x: 0,
+       
+        duration: 1,
+        ease: "expo.inOut",
+
+      }
+    )
+    .to(".swiper-container-blogs-nested", {
+    
+      opacity: 1,
+      delay:0,
+      duration: .2,
+      ease: "expo.inOut",
+
+    })
+   .to(overlay, {
+      x: -value,
+      // transformOrigin:'0 0',
+      opacity: 1,
+      delay:.2,
+      duration: 1,
+      ease: "expo.inOut",
+
+    }).add(()=>{
+      document.querySelector(".swiper-container-blogs-nested").classList.add("with-padding")
+    })
+  
       
   
   }
