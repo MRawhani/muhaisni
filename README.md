@@ -36,5 +36,5 @@ after successfully running `npm run build:dist`, and you have the `dist` folder 
 - Now go to  the images folder of the **dist** directory `/dist/images`, and paste the three items there.
 
 
-Now you `dist` folder is ready to deploy.
+Now your `dist` folder is ready to deploy.
 
